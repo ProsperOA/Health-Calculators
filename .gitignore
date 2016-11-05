@@ -1,0 +1,16 @@
+# OS Garbage
+Thumbs.db
+.DS_Store
+
+# Node Development files
+node_modules/
+bower_components/
+platforms/
+plugins/
+dist
+.tmp
+.sass-cache
+bin
+build
+vendor
+

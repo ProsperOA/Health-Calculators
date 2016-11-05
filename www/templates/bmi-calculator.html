@@ -1,0 +1,81 @@
+<ion-view view-title="BMI Calculator">
+  <ion-content>
+    <h1 class="header">Body Mass Index</h1>
+    
+    <form class="user-input" ng-model="form">
+      <div class="list list-inset">
+      <label class="item item-input">
+        <input type="number" ng-model="feet" placeholder="Feet" required />
+      </label>
+      <label class="item item-input">
+        <input type="number" ng-model="inches" placeholder="Inches" required />
+      </label>
+      <label class="item item-input">
+        <input type="number" ng-model="pounds" placeholder="Pounds" required />
+      </label>
+    </div>
+    
+    
+    <div class="row">
+      <div class="col col-100">
+        <div class="results" id="bmi-esults">
+          <p>BMI: <span>{{ bmi }}</span></p>
+          <p>Category: <span>{{ category }}</span></p>
+        </div>
+      </div>
+    </div>
+    
+    <div id="button-group-bmi">
+      <div class="row">
+      <div class="col col-100">
+        <button type="submit" class="button button-positive button-calculate" ng-click="calcBmi(feet, inches, pounds)">
+      Calculate
+    </button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col col-100">
+        <button class="button button-outline button-stable button-calculate" ng-click="reset(form)">
+      Reset
+    </button>
+      </div>
+    </div>
+    </div>
+    </form>
+    
+    <div class="row">
+      <div class="col col-100">
+        <table class="health-chart">
+        <thead>
+          <tr>
+            <th colspan="2">BMI Categories</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Underweight</td>
+            <td>< 18.5</td>
+          </tr>
+          <tr>
+            <td>Normal Weight</td>
+            <td>18.5-24.9</td>
+          </tr>
+          <tr>
+            <td>Overweight</td>
+            <td>25-29.9</td>
+          </tr>
+          <tr>
+            <td>Obese</td>
+            <td>30-39.9</td>
+          </tr>
+          <tr>
+            <td>Morbidly Obese</td>
+            <td>> 40</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+    </div>
+    
+  </ion-content>
+</ion-view>

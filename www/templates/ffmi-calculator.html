@@ -1,0 +1,94 @@
+<ion-view view-title="FFMI Calculator">
+  <ion-content>
+    <h1 class="header">Fat Free Muscle Index</h1>
+    
+    <form class="user-input" ng-model="form">
+      <div class="list list-inset">
+      <label class="item item-input">
+        <input type="number" ng-model="feet" placeholder="Feet" required />
+      </label>
+      <label class="item item-input">
+        <input type="number" ng-model="inches" placeholder="Inches" required />
+      </label>
+      <label class="item item-input">
+        <input type="number" ng-model="pounds" placeholder="Pounds" required />
+      </label>
+      <label class="item item-input">
+        <input type="number" ng-model="bodyfat" placeholder="Body Fat %" required />
+      </label>
+    </div>
+    
+    
+    <div class="row">
+      <div class="col col-100">
+        <div class="results" id="bmi-esults">
+          <p>FFMI: <span>{{ ffmi }}</span></p>
+          <p>Adjusted FFMI: <span>{{ adjFfmi }}</span></p>
+          <p>Lean Mass: <span>{{ leanMass }}</span></p>
+          <p>Category: <span>{{ category }}</span></p>
+        </div>
+      </div>
+    </div>
+    
+    <div id="button-group-bmi">
+      <div class="row">
+      <div class="col col-100">
+        <button type="submit" class="button button-positive button-calculate" ng-click="calcFfmi(feet, inches, pounds, bodyfat)">
+      Calculate
+    </button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col col-100">
+        <button class="button button-outline button-stable button-calculate" ng-click="reset(form)">
+      Reset
+    </button>
+      </div>
+    </div>
+    </div>
+    </form>
+    
+    <div class="row">
+      <div class="col col-100">
+        <table class="health-chart">
+        <thead>
+          <tr>
+            <th colspan="2">FFMI Categories</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Below Average</td>
+            <td>16-17</td>
+          </tr>
+          <tr>
+            <td>Average</td>
+            <td>18-19</td>
+          </tr>
+          <tr>
+            <td>Above Average</td>
+            <td>20-21</td>
+          </tr>
+          <tr>
+            <td>Excellent</td>
+            <td>22</td>
+          </tr>
+          <tr>
+            <td>Superior</td>
+            <td>23-25</td>
+          </tr>
+          <tr>
+            <td>Suspicious</td>
+            <td>26-27</td>
+          </tr>
+          <tr>
+            <td>Highly Unlikely</td>
+            <td>28-30</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+    </div>
+    
+  </ion-content>
+</ion-view>

@@ -1,0 +1,59 @@
+@charset 'UTF-8';
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Montserrat');
+
+/** HTML **/
+  * {
+    font-family: 'Open Sans';
+  }
+  
+  /* Header */
+    h1.header {
+      font-family: 'Montserrat';
+      text-align: center;
+      margin: 0.5em 0;
+    }
+  
+/** BMI CALCULATOR **/
+  
+  /* User Input Form */
+    
+  /* Results */
+    div#bmi-results {
+      text-align: center;
+    }
+    
+    div#bmi-results p {
+      margin-bottom: 0;
+    }
+    
+    div.results {
+      text-align: center;
+      font-weight: 800;
+    }
+    
+    div.results span {
+      color: red;
+    }
+    
+  /* Buttons */
+    div#button-group-bmi {
+      text-align: center;
+    }
+  
+    button.button-calculate {
+      margin: 0.2em;
+    }
+  
+  /* Categories */
+    table.health-chart {
+      margin: 0 auto;
+    }
+    
+    table.health-chart td {
+      padding: 0.2em 2em;
+    }
+    
+    table.health-chart th {
+      font-weight: 800;
+    }
+    
