@@ -46,6 +46,17 @@ angular.module('healthCalculators', ['ionic', 'healthCalculators.controllers'])
         }
       }
     })
+
+  .state('app.bmr-calculator', {
+      url: '/bmr-calculator',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/bmr-calculator.html',
+          controller: 'BmrCtrl'
+        }
+      }
+    })
+
     .state('app.playlists', {
       url: '/playlists',
       views: {

@@ -16,6 +16,9 @@
 /** BMI CALCULATOR **/
   
   /* User Input Form */
+    div.item-select option {
+      text-align: center;
+    }
     
   /* Results */
     div#bmi-results {
