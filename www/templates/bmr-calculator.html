@@ -18,10 +18,10 @@
       </label>
       <div class="row">
         <div class="col col-50">
-          <ion-checkbox ng-model="male">Male</ion-checkbox>
+          <ion-checkbox ng-model="gender.male">Male</ion-checkbox>
         </div>
         <div class="col col-50">
-          <ion-checkbox ng-model="female">Female</ion-checkbox>
+          <ion-checkbox ng-model="gender.female">Female</ion-checkbox>
         </div>
       </div>
       <div class="row">
@@ -51,11 +51,11 @@
         </div>
       </div>
     </div>
-    
+
     <div id="button-group-bmi">
       <div class="row">
       <div class="col col-100">
-        <button type="submit" class="button button-positive button-calculate" ng-click="calcFfmi(feet, inches, pounds, bodyfat)">
+        <button type="submit" class="button button-positive button-calculate" ng-click="calcBmr(feet, inches, pounds, age, gender)">
       Calculate
     </button>
       </div>
