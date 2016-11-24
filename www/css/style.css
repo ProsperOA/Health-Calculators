@@ -13,6 +13,27 @@
       margin: 0.5em 0;
     }
 
+/** MENU **/
+
+  .item-divider {
+    font-weight: 900;
+  }
+
+  /* User Image */
+    img.img-user {
+      min-height: 60px;
+      min-width: 60px;
+      border: 2px solid #000;
+      border-radius: 50%;
+      background-size: 100%;
+      margin-right: 1em;
+    }
+
+  /* Sign Out */
+    p#sign-out {
+      margin-top: 0.5em;
+    }
+
 /** HOME **/
 
   #home {
