@@ -25,7 +25,7 @@ angular.module('healthCalculators')
         var height = feet * 12 + inches;
         var bmr = (augend + (poundsMultiplicand * pounds) + (heightMultiplicand * height) -
                    (ageMultiplicand * age)).toFixed(2);
-        $scope.bmr = bmr.toString();
+        $scope.bmr = bmr.toString() + '  Calories/Day';
     };
 
     // FIXME -- Doesn't reset form
