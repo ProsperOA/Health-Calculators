@@ -22,11 +22,27 @@
 
     <!-- Health Calculator JS -->
     <script src="js/app.js"></script>
+    <script src="js/controllers/main.js"></script>
+    <script src="js/controllers/home.js"></script>
     <script src="js/controllers/login.js"></script>
+    <script src="js/controllers/loginFactory.js"></script>
     <script src="js/controllers/controllers.js"></script>
     <script src="js/controllers/bmi.js"></script>
     <script src="js/controllers/bmr.js"></script>
     <script src="js/controllers/ffmi.js"></script>
+    <!-- Firebase -->
+   <script src="https://www.gstatic.com/firebasejs/3.6.1/firebase.js"></script>
+   <script>
+     // Initialize Firebase
+     var config = {
+        apiKey: "AIzaSyBS32FB2Kkj-XbfThdw85z5klHQiTS03bc",
+        authDomain: "health-calculators.firebaseapp.com",
+        databaseURL: "https://health-calculators.firebaseio.com",
+        storageBucket: "health-calculators.appspot.com",
+        messagingSenderId: "602800118761"
+      };
+     firebase.initializeApp(config);
+   </script>
   </head>
 
   <body ng-app="healthCalculators">

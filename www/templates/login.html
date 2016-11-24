@@ -1,26 +1,10 @@
-<ion-modal-view>
-  <ion-header-bar>
-    <h1 class="title">Login</h1>
-    <div class="buttons">
-      <button class="button button-clear" ng-click="closeLogin()">Close</button>
-    </div>
-  </ion-header-bar>
-  <ion-content>
-    <form ng-submit="login()">
-      <div class="list">
-        <label class="item item-input">
-          <span class="input-label">Email</span>
-          <input type="text" ng-model="loginData.username">
-        </label>
-        <label class="item item-input">
-          <span class="input-label">Password</span>
-          <input type="password" ng-model="loginData.password">
-        </label>
-        <label class="item">
-          <button class="button button-block button-positive" type="submit">Log In</button>
-          <button class="button button-block button-balanced" ng-click="signUp()">Sign Up</button>
-        </label>
-      </div>
-    </form>
-  </ion-content>
-</ion-modal-view>
+<ion-view view-title="Login">
+ <ion-content>
+   <h1 class="header">Health Calculators</h1>
+   <div class="row">
+     <div class="col col-100">
+       <button class="button button-block button-positive" ng-click="signIn()">Sign In with Google</button>
+     </div>
+   </div>
+ </ion-content>
+</ion-view>
