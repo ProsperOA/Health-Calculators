@@ -24,7 +24,7 @@ angular.module('healthCalculators', ['ionic', 'healthCalculators.controllers'])
     url: '/app',
     abstract: true,
     templateUrl: 'templates/menu.html',
-    controller: 'AppCtrl'
+    controller: 'MainCtrl'
   })
 
   .state('app.home', {

@@ -39,8 +39,11 @@
         <ion-item menu-close href="#">
           Settings
         </ion-item>
-        <ion-item menu-close href="#/app/login">
-          Login
+        <ion-item menu-close ng-hide="env.loggedIn"  ng-click="signIn()">
+          Sign In
+        </ion-item>
+        <ion-item menu-close ng-show="env.loggedIn"  ng-click="signOut()">
+          Sign Out
         </ion-item>
       </ion-list>
     </ion-content>
