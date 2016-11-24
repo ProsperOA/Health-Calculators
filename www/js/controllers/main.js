@@ -17,6 +17,10 @@ angular.module('healthCalculators')
       function() {
         $timeout(function() {
           $scope.user = loginFactory.getUser();
+          var first_name = loginFactory.getUser().name;
+          first_name = first_name.substring(0, first_name.indexOf(' '));
+          $scope.user.name = first_name;
+
           $scope.env = loginFactory.getEnv();
           $scope.$apply();
         });
