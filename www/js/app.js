@@ -27,6 +27,16 @@ angular.module('healthCalculators', ['ionic', 'healthCalculators.controllers'])
     controller: 'AppCtrl'
   })
 
+  .state('app.login', {
+    url: '/login',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/login.html',
+        controller: 'LoginCtrl'
+      }
+    }
+  })
+
   .state('app.bmi-calculator', {
     url: '/bmi-calculator',
     views: {
@@ -77,5 +87,5 @@ angular.module('healthCalculators', ['ionic', 'healthCalculators.controllers'])
     }
   });
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/bmi-calculator');
+  $urlRouterProvider.otherwise('/app/login');
 });
