@@ -34,8 +34,9 @@
       font-weight: 800;
     }
     
+    /* all results */
     div.results span {
-      color: red;
+      color: #930000;
     }
     
   /* Buttons */
