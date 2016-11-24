@@ -27,6 +27,16 @@ angular.module('healthCalculators', ['ionic', 'healthCalculators.controllers'])
     controller: 'AppCtrl'
   })
 
+  .state('app.home', {
+    url: '/home',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/home.html',
+        controller: 'HomeCtrl'
+      }
+    }
+  })
+
   .state('app.login', {
     url: '/login',
     views: {
@@ -87,5 +97,5 @@ angular.module('healthCalculators', ['ionic', 'healthCalculators.controllers'])
     }
   });
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/login');
+  $urlRouterProvider.otherwise('/app/home');
 });
