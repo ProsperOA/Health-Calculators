@@ -23,6 +23,16 @@
           <a class="button button-block button-positive" href="">One Rep Max</a>
         </div>
       </div>
+      <div class="row">
+        <div class="col col-100">
+          <button class="button button-block button-balanced" ng-hide="env.loggedIn" ng-click="signIn()">Sign In with Google</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col col-100">
+          <h4 id="user-name" ng-show="env.loggedIn" ng-click="signIn()">Welcome Back, {{ user.name }}!</h4>
+        </div>
+      </div>
       
   </ion-content>
 </ion-view>
