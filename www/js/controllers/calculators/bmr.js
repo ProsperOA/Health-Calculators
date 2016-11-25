@@ -7,8 +7,13 @@ angular.module('healthCalculators')
   poundsMultiplicand,
   ageMultiplicand;
 
-    $scope.calcBmr = function(feet, inches, pounds, age, gender) {
-        if(isNaN(feet, inches, pounds, age))
+    $scope.calcBmr = function() {
+      var height = $scope.user.info.feet * 12 + $scope.user.info.inches;
+      var pounds = $scope.user.info.pounds;
+      var age = $scope.user.info.age;
+      var gender = $scope.user.info.gender;
+      
+        if(isNaN(height, pounds, age))
             return;
 
         if(gender.male) {
@@ -22,17 +27,9 @@ angular.module('healthCalculators')
           ageMultiplicand = 6.8;
         }
 
-        var height = feet * 12 + inches;
         var bmr = (augend + (poundsMultiplicand * pounds) + (heightMultiplicand * height) -
                    (ageMultiplicand * age)).toFixed(2);
-        $scope.bmr = bmr.toString() + '  Calories/Day';
+        $scope.user.info.bmr = bmr.toString() + '  Calories/Day';
     };
-
-    // FIXME -- Doesn't reset form
-    $scope.reset = function() {
-        $scope.user = angular.copy($scope.originalForm);
-        $scope.bmr = $scope.category = '';
-    };
-    $scope.reset();
 
 });
