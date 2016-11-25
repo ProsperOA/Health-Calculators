@@ -5,22 +5,21 @@
     <form class="user-input" ng-model="form">
       <div class="list list-inset">
       <label class="item item-input">
-        <input type="number" ng-model="feet" placeholder="Feet" required />
+        <input type="number" ng-model="user.info.feet" placeholder="Feet" required />
       </label>
       <label class="item item-input">
-        <input type="number" ng-model="inches" placeholder="Inches" required />
+        <input type="number" ng-model="user.info.inches" placeholder="Inches" required />
       </label>
       <label class="item item-input">
-        <input type="number" ng-model="pounds" placeholder="Pounds" required />
+        <input type="number" ng-model="user.info.pounds" placeholder="Pounds" required />
       </label>
     </div>
-    
     
     <div class="row">
       <div class="col col-100">
         <div class="results" id="bmi-esults">
-          <p>BMI: <span>{{ bmi }}</span></p>
-          <p>Category: <span>{{ category }}</span></p>
+          <p>BMI: <span>{{ user.info.bmi }}</span></p>
+          <p>Category: <span>{{ user.info.category }}</span></p>
         </div>
       </div>
     </div>
@@ -28,14 +27,14 @@
     <div id="button-group-bmi">
       <div class="row">
       <div class="col col-100">
-        <button type="submit" class="button button-positive button-calculate" ng-click="calcBmi(feet, inches, pounds)">
+        <button type="submit" class="button button-positive button-calculate" ng-click="calcBmi()">
       Calculate
     </button>
       </div>
     </div>
     <div class="row">
       <div class="col col-100">
-        <button class="button button-outline button-stable button-calculate" ng-click="reset(form)">
+        <button class="button button-outline button-stable button-calculate" ng-click="reset()">
       Reset
     </button>
       </div>
