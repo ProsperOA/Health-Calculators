@@ -55,30 +55,11 @@
     color: #930000;
   }
 
-/** BMI CALCULATOR **/
+/** BMR CALCULATOR **/
 
-  /* User Input Form */
+  /* Activity Level */
     div.item-select option {
       text-align: center;
-    }
-
-  /* Results */
-    div#bmi-results {
-      text-align: center;
-    }
-
-    div#bmi-results p {
-      margin-bottom: 0;
-    }
-
-    div.results {
-      text-align: center;
-      font-weight: 800;
-    }
-
-    /* all results */
-    div.results span {
-      color: #930000;
     }
 
   /* Buttons */
