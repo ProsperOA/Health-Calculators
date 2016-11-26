@@ -4,48 +4,71 @@
     
     <form class="user-input" ng-model="form">
       <div class="list list-inset">
-      <label class="item item-input">
-        <input type="number" ng-model="user.info.feet" placeholder="Feet" required />
-      </label>
-      <label class="item item-input">
-        <input type="number" ng-model="user.info.inches" placeholder="Inches" required />
-      </label>
-      <label class="item item-input">
-        <input type="number" ng-model="user.info.pounds" placeholder="Pounds" required />
-      </label>
-      <label class="item item-input">
-        <input type="number" ng-model="user.info.bodyfat" placeholder="Body Fat %" required />
-      </label>
-    </div>
+        <label class="item item-input">
+          <input type="number" ng-model="user.info.feet" placeholder="Feet" required />
+        </label>
+        <label class="item item-input">
+          <input type="number" ng-model="user.info.inches" placeholder="Inches" required />
+        </label>
+        <label class="item item-input">
+          <input type="number" ng-model="user.info.pounds" placeholder="Pounds" required />
+        </label>
+        <label class="item item-input">
+          <input type="number" ng-model="user.info.bodyfat" placeholder="Body Fat %" required />
+        </label>
+      </div>
     
-    
-    <div class="row">
-      <div class="col col-100">
-        <div class="results" id="bmi-esults">
-          <p>FFMI: <span>{{ user.info.ffmi }}</span></p>
-          <p>Adjusted FFMI: <span>{{ user.info.adjFfmi }}</span></p>
-          <p>Lean Mass: <span>{{ user.info.leanMass }}</span></p>
-          <p>Category: <span>{{ user.info.category }}</span></p>
+      <div class="user-results">
+        <div class="row">
+          <div class="col col-50">
+            <p>FFMI:</p>
+          </div>
+          <div class="col col-50">
+            <span>{{ user.info.ffmi }}</span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col col-50">
+            <p>Adjusted FFMI:</p>
+          </div>
+          <div class="col col-50">
+            <span>{{ user.info.adjFfmi }}</span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col col-50">
+            <p>Lean Mass:</p>
+          </div>
+          <div class="col col-50">
+            <span>{{ user.info.leanMass }}</span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col col-50">
+            <p>Category:</p>
+          </div>
+          <div class="col col-50">
+            <span>{{ user.info.category }}</span>
+          </div>
         </div>
       </div>
-    </div>
     
-    <div id="button-group-bmi">
-      <div class="row">
-      <div class="col col-100">
-        <button type="submit" class="button button-positive button-calculate" ng-click="calcFfmi()">
-      Calculate
-    </button>
+      <div id="button-group-bmi">
+        <div class="row">
+          <div class="col col-100">
+            <button type="submit" class="button button-positive button-calculate" ng-click="calcFfmi()">
+          Calculate
+        </button>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col col-100">
+            <button class="button button-outline button-stable button-calculate" ng-click="reset()">
+          Reset
+        </button>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="col col-100">
-        <button class="button button-outline button-stable button-calculate" ng-click="reset()">
-      Reset
-    </button>
-      </div>
-    </div>
-    </div>
     </form>
     
     <div class="row">
