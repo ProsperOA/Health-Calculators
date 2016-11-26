@@ -15,11 +15,21 @@
       </label>
     </div>
     
-    <div class="row">
-      <div class="col col-100">
-        <div class="results" id="bmi-esults">
-          <p>BMI: <span>{{ user.info.bmi }}</span></p>
-          <p>Category: <span>{{ user.info.category }}</span></p>
+    <div class="user-results">
+      <div class="row">
+        <div class="col col-50">
+          <p>BMI:</p>
+        </div>
+        <div class="col col-50">
+          <span>{{ user.info.bmi }}</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col col-50">
+          <p>Category:</p>
+        </div>
+        <div class="col col-50">
+          <span>{{ user.info.category }}</span>
         </div>
       </div>
     </div>
