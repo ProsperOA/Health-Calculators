@@ -2,18 +2,18 @@
 Health Calculators is an all-in-one suite for health and fitness related calculators.
 
 ## Prerequisites: ##
-  - Node.js >= 6.9.1
-  - NPM >= 3.10.3
+  - [Node.js](https://nodejs.org/en/download) >= 6.9.1
+  - Cordova CLI >= 4.2.0
+  
+## Install/Update Ionic and Cordova CLI ##
+```sh
+  npm install -g cordova ionic
+```
 
 ## Clone Repository ##
 ```sh
   git clone https://github.com/ProsperOA/Health-Calculators.git
   cd Health-Calculators
-```
-
-## Install Ionic CLI and Cordova ##
-```sh
-  npm install -g cordova ionic
 ```
 
 ## Test app in browser ##

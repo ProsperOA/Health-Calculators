@@ -3,9 +3,9 @@
 angular.module('healthCalculators')
 .controller('BmrCtrl', function ($scope) {
   var augend,
-  heightMultiplicand,
-  poundsMultiplicand,
-  ageMultiplicand;
+      heightMultiplicand,
+      poundsMultiplicand,
+      ageMultiplicand;
 
     $scope.calcBmr = function() {
       var height = $scope.user.info.feet * 12 + $scope.user.info.inches;
