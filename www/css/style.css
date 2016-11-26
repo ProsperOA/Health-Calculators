@@ -40,6 +40,21 @@
     text-align: center;
   }
 
+/** USER RESULTS **/
+
+  div.user-results {
+    font-weight: 900;
+  }
+
+  div.user-results p {
+    text-align: right;
+    margin-bottom: 0;
+  }
+
+  div.user-results span {
+    color: #930000;
+  }
+
 /** BMI CALCULATOR **/
 
   /* User Input Form */
