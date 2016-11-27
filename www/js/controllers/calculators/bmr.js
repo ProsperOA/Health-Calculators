@@ -2,34 +2,25 @@
 
 angular.module('healthCalculators')
 .controller('BmrCtrl', function ($scope) {
-  var augend,
-      heightMultiplicand,
-      poundsMultiplicand,
-      ageMultiplicand;
+  var addend;
 
     $scope.calcBmr = function() {
-      var height = $scope.user.info.feet * 12 + $scope.user.info.inches;
-      var pounds = $scope.user.info.pounds;
+      var height_cm = ($scope.user.info.feet * 12 + $scope.user.info.inches) * 2.54;
+      var weight_kg = ($scope.user.info.pounds) * 0.45359237;
       var age = $scope.user.info.age;
       var gender = $scope.user.info.gender;
       
-        if(isNaN(height, pounds, age))
-            return;
+      if(isNaN(height_cm, weight_kg, age, gender))
+          return;
 
-        if(gender.male) {
-          augend = 655;
-          heightMultiplicand = 4.35;
-          poundsMultiplicand = ageMultiplicand = 4.7;
-        } else if(gender.female) {
-          augend = 66;
-          heightMultiplicand = 6.23;
-          poundsMultiplicand = 12.7;
-          ageMultiplicand = 6.8;
-        }
+      if(gender.male) {
+        addend = 5;
+      } else if(gender.female) {
+        addend = -161;
+      }
 
-        var bmr = (augend + (poundsMultiplicand * pounds) + (heightMultiplicand * height) -
-                   (ageMultiplicand * age)).toFixed(2);
-        $scope.user.info.bmr = bmr.toString() + '  Calories/Day';
+      var bmr = ((10 * weight_kg) + (6.25 * height_cm) - (5 * age) + addend).toFixed(2);
+      $scope.user.info.bmr = bmr.toString() + '  Calories/Day';
     };
 
 });
