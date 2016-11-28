@@ -36,6 +36,16 @@ angular.module('healthCalculators', ['ionic', 'healthCalculators.controllers'])
       }
     }
   })
+  
+  .state('app.calorie-calculator', {
+    url: '/calorie-calculator',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/calorie-calculator.html',
+        controller: 'Bmr-CalorieCtrl'
+      }
+    }
+  })
 
   .state('app.bmi-calculator', {
     url: '/bmi-calculator',
@@ -62,7 +72,7 @@ angular.module('healthCalculators', ['ionic', 'healthCalculators.controllers'])
       views: {
         'menuContent': {
           templateUrl: 'templates/bmr-calculator.html',
-          controller: 'BmrCtrl'
+          controller: 'Bmr-CalorieCtrl'
         }
       }
     })
