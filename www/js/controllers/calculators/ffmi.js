@@ -19,19 +19,19 @@ angular.module('healthCalculators')
         $scope.user.info.ffmi = ffmi.toFixed(2).toString();
         $scope.user.info.adjFfmi = adjFfmi.toFixed(2).toString();
       
-        if(ffmi <= 17) {
+        if(ffmi < 18) {
             $scope.user.info.category = 'Below Average';
-        } else if(ffmi > 17 && ffmi <= 19) {
+        } else if(ffmi >= 18 && ffmi <= 19.9) {
             $scope.user.info.category = 'Average';
-        } else if(ffmi > 19 && ffmi <= 21) {
+        } else if(ffmi >= 20 && ffmi <= 21.9) {
             $scope.user.info.category = 'Above Average';
-        } else if(ffmi > 21 && ffmi <= 22) {
+        } else if(ffmi >= 22 && ffmi <= 22.9) {
             $scope.user.info.category = 'Excellent';
-        } else if(ffmi > 22 && ffmi <= 25) {
+        } else if(ffmi >= 23 && ffmi <= 25.9) {
             $scope.user.info.category = 'Superior';
-        } else if(ffmi > 25 && ffmi <= 27) {
+        } else if(ffmi >= 26 && ffmi <= 27.9) {
             $scope.user.info.category = 'Suspicious';
-        } else if(ffmi > 27) {
+        } else if(ffmi >= 28) {
             $scope.user.info.category = 'Highly Unlikely';
         } else {
             alert('Please enter a valid value');
