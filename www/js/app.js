@@ -1,5 +1,5 @@
 
-angular.module('healthCalculators', ['ionic', 'healthCalculators.controllers'])
+angular.module('healthCalculators', ['ionic'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -76,26 +76,17 @@ angular.module('healthCalculators', ['ionic', 'healthCalculators.controllers'])
         }
       }
     })
-
-    .state('app.playlists', {
-      url: '/playlists',
+  
+  .state('app.orm-calculator', {
+      url: '/orm-calculator',
       views: {
         'menuContent': {
-          templateUrl: 'templates/playlists.html',
-          controller: 'PlaylistsCtrl'
+          templateUrl: 'templates/orm-calculator.html',
+          controller: 'OrmCtrl'
         }
       }
-    })
-
-  .state('app.single', {
-    url: '/playlists/:playlistId',
-    views: {
-      'menuContent': {
-        templateUrl: 'templates/playlist.html',
-        controller: 'PlaylistCtrl'
-      }
-    }
-  });
+    });
+  
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/home');
 });
