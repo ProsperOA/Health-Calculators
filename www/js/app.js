@@ -1,5 +1,5 @@
 
-angular.module('healthCalculators', ['ionic', 'healthCalculators.controllers'])
+angular.module('healthCalculators', ['ionic'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
