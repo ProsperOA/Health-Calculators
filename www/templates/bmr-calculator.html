@@ -24,18 +24,8 @@
             <ion-checkbox ng-model="user.info.gender.female">Female</ion-checkbox>
           </div>
         </div>
-
-      <div class="user-results">
-        <div class="row">
-          <div class="col col-33">
-            <p>BMR:</p>
-          </div>
-          <div class="col col-66">
-            <span>{{ user.info.bmr }}</span>
-          </div>
-        </div>
       </div>
-
+        
       <div id="button-group-bmi">
         <div class="row">
           <div class="col col-100">
@@ -49,6 +39,17 @@
             <button class="button button-outline button-stable button-calculate" ng-click="reset()">
               Reset
             </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="user-results">
+        <div class="row">
+          <div class="col col-33">
+            <p>BMR:</p>
+          </div>
+          <div class="col col-66">
+            <span>{{ user.info.bmr }}</span>
           </div>
         </div>
       </div>

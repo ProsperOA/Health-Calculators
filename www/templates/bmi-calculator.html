@@ -1,7 +1,7 @@
 <ion-view view-title="BMI Calculator">
   <ion-content>
     <h1 class="header">Body Mass Index</h1>
-    
+
     <form class="user-input" ng-model="form">
       <div class="list list-inset">
       <label class="item item-input">
@@ -14,7 +14,24 @@
         <input type="number" min="0" ng-minlength="1" ng-model="user.info.pounds" placeholder="Pounds" required />
       </label>
     </div>
-    
+
+    <div id="button-group-bmi">
+      <div class="row">
+        <div class="col col-100">
+          <button type="submit" class="button button-positive button-calculate" ng-click="calcBmi()">
+            Calculate
+          </button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col col-100">
+          <button class="button button-outline button-stable button-calculate" ng-click="reset()">
+            Reset
+          </button>
+        </div>
+      </div>
+    </div>
+
     <div class="user-results">
       <div class="row">
         <div class="col col-50">
@@ -33,25 +50,9 @@
         </div>
       </div>
     </div>
-    
-    <div id="button-group-bmi">
-      <div class="row">
-      <div class="col col-100">
-        <button type="submit" class="button button-positive button-calculate" ng-click="calcBmi()">
-      Calculate
-    </button>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col col-100">
-        <button class="button button-outline button-stable button-calculate" ng-click="reset()">
-      Reset
-    </button>
-      </div>
-    </div>
-    </div>
     </form>
-    
+    <hr />
+
     <div class="row">
       <div class="col col-100">
         <table class="health-chart">
@@ -85,6 +86,6 @@
       </table>
       </div>
     </div>
-    
+
   </ion-content>
 </ion-view>
