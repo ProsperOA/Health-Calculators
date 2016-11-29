@@ -20,8 +20,7 @@ angular.module('healthCalculators')
         addend = -161;
       }
     
-      bmr = ((10 * weight_kg) + (6.25 * height_cm) - (5 * age) + addend).toFixed(2)
-      .toString();
+      bmr = Math.round(((10 * weight_kg) + (6.25 * height_cm) - (5 * age) + addend));
       $scope.user.info.bmr = bmr + ' Calories/Day';
     };
     
@@ -50,10 +49,10 @@ angular.module('healthCalculators')
       }
       
       $scope.user.info.cal_maintain = bmr + ' Calories/Day';
-      $scope.user.info.cal_lose1 = (bmr -= 500) + ' Calories/Day';
-      $scope.user.info.cal_lose2 = (bmr -= 1000) + ' Calories/Day';
-      $scope.user.info.cal_gain1 = (bmr += 500) + ' Calories/Day';
-      $scope.user.info.cal_gain2 = (bmr += 1000) + ' Calories/Day';
+      $scope.user.info.cal_lose1 = (bmr - 500) + ' Calories/Day';
+      $scope.user.info.cal_lose2 = (bmr - 1000) + ' Calories/Day';
+      $scope.user.info.cal_gain1 = (bmr + 500) + ' Calories/Day';
+      $scope.user.info.cal_gain2 = (bmr + 1000) + ' Calories/Day';
     };
 
 });
