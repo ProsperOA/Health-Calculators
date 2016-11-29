@@ -5,13 +5,13 @@
     <form class="user-input" ng-model="form">
       <div class="list list-inset">
       <label class="item item-input">
-        <input type="number" ng-model="user.info.feet" placeholder="Feet" required />
+        <input type="number" min="0" ng-minlength="1" ng-model="user.info.feet" placeholder="Feet" required />
       </label>
       <label class="item item-input">
-        <input type="number" ng-model="user.info.inches" placeholder="Inches" required />
+        <input type="number" min="0" ng-minlength="1" ng-model="user.info.inches" placeholder="Inches" required />
       </label>
       <label class="item item-input">
-        <input type="number" ng-model="user.info.pounds" placeholder="Pounds" required />
+        <input type="number" min="0" ng-minlength="1" ng-model="user.info.pounds" placeholder="Pounds" required />
       </label>
     </div>
     
