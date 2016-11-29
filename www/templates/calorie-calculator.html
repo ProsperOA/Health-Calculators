@@ -5,16 +5,16 @@
     <form class="user-input" ng-model="form">
       <div class="list list-inset">
         <label class="item item-input">
-          <input type="number" ng-model="user.info.feet" placeholder="Feet" required />
+          <input type="number" min="0" ng-minlength="1" min="0" ng-minlength="1"  ng-model="user.info.feet" placeholder="Feet" required />
         </label>
         <label class="item item-input">
-          <input type="number" ng-model="user.info.inches" placeholder="Inches" required />
+          <input type="number" min="0" ng-minlength="1" ng-model="user.info.inches" placeholder="Inches" required />
         </label>
         <label class="item item-input">
-          <input type="number" ng-model="user.info.pounds" placeholder="Pounds" required />
+          <input type="number" min="0" ng-minlength="1" ng-model="user.info.pounds" placeholder="Pounds" required />
         </label>
         <label class="item item-input">
-          <input type="number" ng-model="user.info.age" placeholder="Age" required />
+          <input type="number" min="0" ng-minlength="1" ng-model="user.info.age" placeholder="Age" required />
         </label>
         <div class="row">
           <div class="col col-50">
@@ -38,6 +38,23 @@
                   </select>
               </label>
             </div>
+          </div>
+        </div>
+      </div>
+      
+      <div id="button-group-bmi">
+        <div class="row">
+          <div class="col col-100">
+            <button type="submit" class="button button-positive button-calculate" ng-click="calcCalories(activity)">
+              Calculate
+            </button>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col col-100">
+            <button class="button button-outline button-stable button-calculate" ng-click="reset()">
+              Reset
+            </button>
           </div>
         </div>
       </div>
@@ -81,23 +98,6 @@
           </div>
           <div class="col col-50">
             <span>{{ user.info.cal_gain2 }}</span>
-          </div>
-        </div>
-      </div>
-    
-      <div id="button-group-bmi">
-        <div class="row">
-          <div class="col col-100">
-            <button type="submit" class="button button-positive button-calculate" ng-click="calcCalories(activity)">
-              Calculate
-            </button>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col col-100">
-            <button class="button button-outline button-stable button-calculate" ng-click="reset()">
-              Reset
-            </button>
           </div>
         </div>
       </div>
