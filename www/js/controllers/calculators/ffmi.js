@@ -1,7 +1,7 @@
 // FFMI Calculator Controller
 
 angular.module('healthCalculators')
-.controller('FfmiCtrl', function ($scope) {
+.controller('FfmiCtrl', function ($scope, globals) {
     $scope.calcFfmi = function() {
       var height = $scope.user.info.feet * 12 + $scope.user.info.inches;
       var pounds = $scope.user.info.pounds;
@@ -15,9 +15,9 @@ angular.module('healthCalculators')
         var ffmi = (leanMass / 2.2) / Math.pow(height * 0.0254, 2) * 2.20462;
         var adjFfmi = ffmi + (6.0 * ((height * 0.0254) - 1.8));
         
-        $scope.user.info.leanMass = (leanMass * 2.20462).toFixed(2).toString() + ' lbs';
-        $scope.user.info.ffmi = ffmi.toFixed(2).toString();
-        $scope.user.info.adjFfmi = adjFfmi.toFixed(2).toString();
+        $scope.user.info.leanMass = (leanMass * 2.20462).toFixed(2) + globals.lbs;
+        $scope.user.info.ffmi = ffmi.toFixed(2);
+        $scope.user.info.adjFfmi = adjFfmi.toFixed(2);
       
         if(ffmi < 18) {
             $scope.user.info.category = 'Below Average';
@@ -34,7 +34,7 @@ angular.module('healthCalculators')
         } else if(ffmi >= 28) {
             $scope.user.info.category = 'Highly Unlikely';
         } else {
-            alert('Please enter a valid value');
+            console.error('Invalid value');
         }
     };
     
