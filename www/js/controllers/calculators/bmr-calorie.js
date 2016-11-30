@@ -25,7 +25,7 @@ angular.module('healthCalculators')
     };
     
     // Calorie Calculator
-    $scope.calcCalories = function(activity) {
+    $scope.calcCalories = function(activity='Sedentary') {
       $scope.calcBmr();
       
       switch(activity) {
