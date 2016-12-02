@@ -97,6 +97,16 @@ angular.module('healthCalculators', ['ionic'])
       }
     })
   
+  .state('app.thr', {
+      url: '/thr',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/calculators/thr.html',
+          controller: 'ThrCtrl'
+        }
+      }
+    })
+  
   .state('app.information', {
       url: '/information',
       views: {

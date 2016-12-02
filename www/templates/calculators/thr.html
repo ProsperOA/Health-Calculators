@@ -1,0 +1,88 @@
+<ion-view view-title="THR Calculator">
+  <ion-content>
+    <h1 class="header">Target Heart Rate</h1>
+
+    <form class="user-input" ng-model="form" novalidate>
+      <div class="list list-inset">
+        <label class="item item-input">
+          <input type="number" min="0" ng-minlength="1" ng-model="user.info.age" placeholder="Age" />
+        </label>
+        <label class="item item-input">
+          <input type="number" min="0" max="100" ng-minlength="1" ng-model="user.info.desired_hr" placeholder="Target Heart Rate %" />
+        </label>
+      </div>
+
+      <div class="button-group">
+        <div class="row">
+          <div class="col col-100">
+            <button type="submit" class="button button-positive button-calculate" ng-click="calcThr()">
+              Calculate
+            </button>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col col-100">
+            <button class="button button-outline button-stable button-calculate" ng-click="reset()">
+              Reset
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+
+    <div class="user-results">
+      <div class="row">
+        <div class="col col-50">
+          <p>Maximum Heart Rate:</p>
+        </div>
+        <div class="col col-50">
+          <span>{{ user.info.max_hr }}</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col col-50">
+          <p>Desired Heart Rate:</p>
+        </div>
+        <div class="col col-50">
+          <span>{{ user.info.target_hr}}</span>
+        </div>
+      </div>
+    </div>
+    <hr />
+
+    <div class="row">
+      <div class="col col-100">
+        <table class="health-chart">
+          <thead>
+            <tr>
+              <th colspan="2">Heart Rate Zones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Healthy</td>
+              <td>50%-60%</td>
+            </tr>
+            <tr>
+              <td>Temperature</td>
+              <td>60%-70%</td>
+            </tr>
+            <tr>
+              <td>Aerobic</td>
+              <td>70%-80%</td>
+            </tr>
+            <tr>
+              <td>Threshold</td>
+              <td>80%-90%</td>
+            </tr>
+            <tr>
+              <td>Performace Redline</td>
+              <td>90%-100%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </ion-content>
+</ion-view>
