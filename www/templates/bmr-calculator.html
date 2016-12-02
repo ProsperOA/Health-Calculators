@@ -2,7 +2,7 @@
   <ion-content>
     <h1 class="header">Basal Metabolic Rate</h1>
 
-    <form class="user-input" ng-model="form">
+    <form class="user-input" ng-model="form" novalidate>
       <div class="list list-inset">
         <label class="item item-input">
           <input type="number" min="0" ng-minlength="1" ng-model="user.info.feet" placeholder="Feet" required />
@@ -25,7 +25,7 @@
           </div>
         </div>
       </div>
-        
+
       <div id="button-group-bmi">
         <div class="row">
           <div class="col col-100">
@@ -42,6 +42,7 @@
           </div>
         </div>
       </div>
+    </form>
 
       <div class="user-results">
         <div class="row">
@@ -53,7 +54,6 @@
           </div>
         </div>
       </div>
-    </form>
 
   </ion-content>
 </ion-view>
