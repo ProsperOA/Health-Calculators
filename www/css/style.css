@@ -54,6 +54,11 @@
     text-align: right;
     margin-bottom: 0;
   }
+  
+  .center p,
+  .center div.col {
+    text-align: center !important;
+  }
 
   div.user-results span {
     color: #930000;
