@@ -7,7 +7,7 @@ angular.module('healthCalculators')
       var bodyfat = $scope.user.info.bodyfat;
       
       var lbm = (pounds - bodyfat);
-      $scope.user.info.lean = lbm;
+      $scope.user.info.lean = lbm + globals.lbs;
     };
     
 });
