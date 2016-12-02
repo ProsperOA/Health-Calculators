@@ -6,11 +6,19 @@
     font-family: 'Open Sans';
   }
 
+  i {
+    font-style: italic;
+  }
+
   /* Header */
     h1.header {
       font-family: 'Montserrat';
       text-align: center;
       margin: 0.5em 0;
+    }
+
+    div.col {
+      min-height: 30px;
     }
 
 /** MENU **/
@@ -51,6 +59,11 @@
     margin-bottom: 0;
   }
 
+  .center p,
+  .center div.col {
+    text-align: center !important;
+  }
+
   div.user-results span {
     color: #930000;
   }
@@ -63,7 +76,7 @@
     }
 
   /* Buttons */
-    div#button-group-bmi {
+    div.button-group {
       text-align: center;
     }
 
@@ -83,10 +96,16 @@
     table.health-chart th {
       font-weight: 800;
     }
-    
+
 /** ORM CALCULATOR **/
 
   /* Reps and Weights */
     div#reps-chart .col-100 > p {
       text-align: center;
     }
+
+/** INFORMATION **/
+
+  div#info p {
+    line-height: 1.32em;
+  }

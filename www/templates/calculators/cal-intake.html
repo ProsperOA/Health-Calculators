@@ -1,8 +1,8 @@
-<ion-view view-title="Calorie Calculator">
+<ion-view view-title="Caloric Intake Calculator">
   <ion-content>
-    <h1 class="header">Calories</h1>
-    
-    <form class="user-input" ng-model="form">
+    <h1 class="header">Caloric Intake</h1>
+
+    <form class="user-input" ng-model="form" novalidate>
       <div class="list list-inset">
         <label class="item item-input">
           <input type="number" min="0" ng-minlength="1" min="0" ng-minlength="1"  ng-model="user.info.feet" placeholder="Feet" required />
@@ -41,8 +41,8 @@
           </div>
         </div>
       </div>
-      
-      <div id="button-group-bmi">
+
+      <div class="button-group">
         <div class="row">
           <div class="col col-100">
             <button type="submit" class="button button-positive button-calculate" ng-click="calcCalories(activity)">
@@ -58,50 +58,50 @@
           </div>
         </div>
       </div>
-    
-      <div class="user-results">
-        <div class="row">
-          <div class="col col-50">
-            <p>Maintain Weight:</p>
-          </div>
-          <div class="col col-50">
-            <span>{{ user.info.cal_maintain }}</span>
-          </div>
+    </form>
+
+    <div class="user-results">
+      <div class="row">
+        <div class="col col-50">
+          <p>Maintain Weight:</p>
         </div>
-        <div class="row">
-          <div class="col col-50">
-            <p>Lose 1 lb/week:</p>
-          </div>
-          <div class="col col-50">
-            <span>{{ user.info.cal_lose1 }}</span>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col col-50">
-            <p>Lose 2 lbs/week:</p>
-          </div>
-          <div class="col col-50">
-            <span>{{ user.info.cal_lose2 }}</span>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col col-50">
-            <p>Gain 1 lb/week:</p>
-          </div>
-          <div class="col col-50">
-            <span>{{ user.info.cal_gain1 }}</span>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col col-50">
-            <p>Gain 2 lbs/week:</p>
-          </div>
-          <div class="col col-50">
-            <span>{{ user.info.cal_gain2 }}</span>
-          </div>
+        <div class="col col-50">
+          <span>{{ user.info.cal_maintain }}</span>
         </div>
       </div>
-    </form>
-    
+      <div class="row">
+        <div class="col col-50">
+          <p>Lose 1 lb/week:</p>
+        </div>
+        <div class="col col-50">
+          <span>{{ user.info.cal_lose1 }}</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col col-50">
+          <p>Lose 2 lbs/week:</p>
+        </div>
+        <div class="col col-50">
+          <span>{{ user.info.cal_lose2 }}</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col col-50">
+          <p>Gain 1 lb/week:</p>
+        </div>
+        <div class="col col-50">
+          <span>{{ user.info.cal_gain1 }}</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col col-50">
+          <p>Gain 2 lbs/week:</p>
+        </div>
+        <div class="col col-50">
+          <span>{{ user.info.cal_gain2 }}</span>
+        </div>
+      </div>
+    </div>
+
   </ion-content>
 </ion-view>

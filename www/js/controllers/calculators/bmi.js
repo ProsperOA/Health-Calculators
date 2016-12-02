@@ -1,7 +1,7 @@
 // BMI Calculator Controller
 
 angular.module('healthCalculators')
-.controller('BmiCtrl', function ($scope) {
+.controller('BmiCtrl', function ($scope, globals) {
     $scope.calcBmi = function() {
       var height = $scope.user.info.feet * 12 + $scope.user.info.inches;
       var pounds = $scope.user.info.pounds;
@@ -12,7 +12,7 @@ angular.module('healthCalculators')
         $scope.user.info.bmi = bmi.toString();
       
         if(bmi < 18.5) {
-            $scope.category = 'Underweight';
+            $scope.user.info.category = 'Underweight';
         } else if(bmi >= 18.5 && bmi <= 24.9) {
             $scope.user.info.category = 'Normal';
         } else if(bmi >= 25 && bmi <= 29.9) {
@@ -22,7 +22,7 @@ angular.module('healthCalculators')
         } else if(bmi >= 40) {
             $scope.user.info.category = 'Morbidly Obese';
         } else {
-            alert('Please enter a valid value');
+            console.error('Invalid value');
         }
     };
     

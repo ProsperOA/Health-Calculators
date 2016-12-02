@@ -1,0 +1,47 @@
+<ion-view view-title="LBM Calculator">
+  <ion-content>
+    <h1 class="header">Lean Body Mass</h1>
+
+    <form class="user-input" ng-model="form">
+      <div class="list list-inset">
+        <label class="item item-input">
+          <input type="number" min="0" ng-minlength="1" ng-model="user.info.pounds" placeholder="Pounds" required />
+        </label>
+        <label class="item item-input">
+          <input type="number" min="0" ng-minlength="1" ng-model="user.info.bodyfat" placeholder="Body Fat %" required />
+        </label>
+      </div>
+
+      <div class="button-group">
+        <div class="row">
+          <div class="col col-100">
+            <button type="submit" class="button button-positive button-calculate" ng-click="calcLbm()">
+              Calculate
+            </button>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col col-100">
+            <button class="button button-outline button-stable button-calculate" ng-click="reset()">
+              Reset
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+
+      <div class="user-results center">
+        <div class="row">
+          <div class="col col-100">
+            <p>Lean Body Mass:</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col col-100">
+            <span>{{ user.info.lean }}</span>
+          </div>
+        </div>
+      </div>
+
+  </ion-content>
+</ion-view>

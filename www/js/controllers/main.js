@@ -3,7 +3,7 @@
 angular.module('healthCalculators')
   .controller('MainCtrl', function ($scope, $rootScope, $timeout, loginFactory) {
     $scope.reset = function() {
-      $scope.user.info = '';
+      $scope.user.info = {};
     };
 
     $scope.user = loginFactory.getUser();

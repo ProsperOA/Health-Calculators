@@ -1,7 +1,7 @@
-// BMR & Calorie Calculator Controller
-
+// BMR & Calorie Calculator Controller
+
 angular.module('healthCalculators')
-.controller('Bmr-CalorieCtrl', function ($scope, $location) {
+.controller('Bmr-CalorieCtrl', function ($scope, globals) {
   var addend, bmr;
   
     // BMR Calculator
@@ -20,13 +20,12 @@ angular.module('healthCalculators')
         addend = -161;
       }
     
-      bmr = ((10 * weight_kg) + (6.25 * height_cm) - (5 * age) + addend).toFixed(2)
-      .toString();
-      $scope.user.info.bmr = bmr + ' Calories/Day';
+      bmr = Math.round(((10 * weight_kg) + (6.25 * height_cm) - (5 * age) + addend));
+      $scope.user.info.bmr = bmr + globals.cal_day;
     };
     
     // Calorie Calculator
-    $scope.calcCalories = function(activity) {
+    $scope.calcCalories = function(activity='Sedentary') {
       $scope.calcBmr();
       
       switch(activity) {
@@ -49,11 +48,11 @@ angular.module('healthCalculators')
             console.error('No activity level chosen.\nActivity: ' + activity);
       }
       
-      $scope.user.info.cal_maintain = bmr + ' Calories/Day';
-      $scope.user.info.cal_lose1 = (bmr -= 500) + ' Calories/Day';
-      $scope.user.info.cal_lose2 = (bmr -= 1000) + ' Calories/Day';
-      $scope.user.info.cal_gain1 = (bmr += 500) + ' Calories/Day';
-      $scope.user.info.cal_gain2 = (bmr += 1000) + ' Calories/Day';
+      $scope.user.info.cal_maintain = bmr + globals.cal_day;
+      $scope.user.info.cal_lose1 = (bmr - 500) + globals.cal_day;
+      $scope.user.info.cal_lose2 = (bmr - 1000) + globals.cal_day;
+      $scope.user.info.cal_gain1 = (bmr + 500) + globals.cal_day;
+      $scope.user.info.cal_gain2 = (bmr + 1000) + globals.cal_day;
     };
 
-});
+});
