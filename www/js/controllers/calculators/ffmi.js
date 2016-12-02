@@ -15,7 +15,6 @@ angular.module('healthCalculators')
         var ffmi = (leanMass / 2.2) / Math.pow(height * 0.0254, 2) * 2.20462;
         var adjFfmi = ffmi + (6.0 * ((height * 0.0254) - 1.8));
         
-        $scope.user.info.leanMass = (leanMass * 2.20462).toFixed(2) + globals.lbs;
         $scope.user.info.ffmi = ffmi.toFixed(2);
         $scope.user.info.adjFfmi = adjFfmi.toFixed(2);
       
