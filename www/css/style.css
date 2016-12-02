@@ -5,7 +5,7 @@
   * {
     font-family: 'Open Sans';
   }
-  
+
   i {
     font-style: italic;
   }
@@ -15,6 +15,10 @@
       font-family: 'Montserrat';
       text-align: center;
       margin: 0.5em 0;
+    }
+
+    div.col {
+      min-height: 30px;
     }
 
 /** MENU **/
@@ -54,7 +58,7 @@
     text-align: right;
     margin-bottom: 0;
   }
-  
+
   .center p,
   .center div.col {
     text-align: center !important;
@@ -92,7 +96,7 @@
     table.health-chart th {
       font-weight: 800;
     }
-    
+
 /** ORM CALCULATOR **/
 
   /* Reps and Weights */
