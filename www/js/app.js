@@ -37,61 +37,61 @@ angular.module('healthCalculators', ['ionic'])
     }
   })
   
-  .state('app.calorie-calculator', {
-    url: '/calorie-calculator',
+  .state('app.cal-intake', {
+    url: '/cal-intake',
     views: {
       'menuContent': {
-        templateUrl: 'templates/calorie-calculator.html',
+        templateUrl: 'templates/calculators/cal-intake.html',
         controller: 'Bmr-CalorieCtrl'
       }
     }
   })
 
-  .state('app.bmi-calculator', {
-    url: '/bmi-calculator',
+  .state('app.bmi', {
+    url: '/bmi',
     views: {
       'menuContent': {
-        templateUrl: 'templates/bmi-calculator.html',
+        templateUrl: 'templates/calculators/bmi.html',
         controller: 'BmiCtrl'
       }
     }
   })
   
-  .state('app.lbm-calculator', {
-      url: '/lbm-calculator',
+  .state('app.lbm', {
+      url: '/lbm',
       views: {
         'menuContent': {
-          templateUrl: 'templates/lbm-calculator.html',
+          templateUrl: 'templates/calculators/lbm.html',
           controller: 'LbmCtrl'
         }
       }
     })
 
-  .state('app.ffmi-calculator', {
-      url: '/ffmi-calculator',
+  .state('app.ffmi', {
+      url: '/ffmi',
       views: {
         'menuContent': {
-          templateUrl: 'templates/ffmi-calculator.html',
+          templateUrl: 'templates/calculators/ffmi.html',
           controller: 'FfmiCtrl'
         }
       }
     })
 
-  .state('app.bmr-calculator', {
-      url: '/bmr-calculator',
+  .state('app.bmr', {
+      url: '/bmr',
       views: {
         'menuContent': {
-          templateUrl: 'templates/bmr-calculator.html',
+          templateUrl: 'templates/calculators/bmr.html',
           controller: 'Bmr-CalorieCtrl'
         }
       }
     })
   
-  .state('app.orm-calculator', {
-      url: '/orm-calculator',
+  .state('app.orm', {
+      url: '/orm',
       views: {
         'menuContent': {
-          templateUrl: 'templates/orm-calculator.html',
+          templateUrl: 'templates/calculators/orm.html',
           controller: 'OrmCtrl'
         }
       }
