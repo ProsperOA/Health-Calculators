@@ -39,13 +39,4 @@ angular.module('healthCalculators')
         }
     };
     
-    $scope.calcLbm = function() {
-      pounds = $scope.user.info.pounds;
-      bodyfat = $scope.user.info.bodyfat;
-      
-      var lbm = (pounds - bodyfat);
-      
-      $scope.user.info.lean = lbm;
-    };
-    
 });
