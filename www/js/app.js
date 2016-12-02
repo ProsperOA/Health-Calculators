@@ -56,6 +56,16 @@ angular.module('healthCalculators', ['ionic'])
       }
     }
   })
+  
+  .state('app.lbm-calculator', {
+      url: '/lbm-calculator',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/lbm-calculator.html',
+          controller: 'LbmCtrl'
+        }
+      }
+    })
 
   .state('app.ffmi-calculator', {
       url: '/ffmi-calculator',

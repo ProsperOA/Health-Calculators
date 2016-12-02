@@ -2,10 +2,12 @@
 
 angular.module('healthCalculators')
 .controller('FfmiCtrl', function ($scope, globals) {
+  var height, pounds, bodyfat;
+  
     $scope.calcFfmi = function() {
-      var height = $scope.user.info.feet * 12 + $scope.user.info.inches;
-      var pounds = $scope.user.info.pounds;
-      var bodyfat = $scope.user.info.bodyfat;
+      height = $scope.user.info.feet * 12 + $scope.user.info.inches;
+      pounds = $scope.user.info.pounds;
+      bodyfat = $scope.user.info.bodyfat;
       
         if(isNaN(height, pounds, bodyfat))
             return;
@@ -35,6 +37,15 @@ angular.module('healthCalculators')
         } else {
             console.error('Invalid value');
         }
+    };
+    
+    $scope.calcLbm = function() {
+      pounds = $scope.user.info.pounds;
+      bodyfat = $scope.user.info.bodyfat;
+      
+      var lbm = (pounds - bodyfat);
+      
+      $scope.user.info.lean = lbm;
     };
     
 });
