@@ -5,6 +5,10 @@
   * {
     font-family: 'Open Sans';
   }
+  
+  i {
+    font-style: italic;
+  }
 
   /* Header */
     h1.header {
