@@ -94,3 +94,9 @@
     div#reps-chart .col-100 > p {
       text-align: center;
     }
+
+/** INFORMATION **/
+
+  div#info p {
+    line-height: 1.32em;
+  }
