@@ -2,20 +2,20 @@
   <ion-content>
     <h1 class="header">One Rep Max</h1>
 
-    <form class="user-input" ng-model="form" novalidate>
+    <form class="user-input" name="form" ng-submit="form.$valid && calcOrm()" novalidate>
       <div class="list list-inset">
         <label class="item item-input">
-          <input type="number" min="0" ng-minlength="1" ng-model="user.info.weight_lifted" placeholder="Weight Lifted (lbs)" required />
+          <input type="number" min="0" ng-minlength="1" ng-model="user.info.weight_lifted" placeholder="Weight Lifted (lbs)" ng-required="true" />
         </label>
         <label class="item item-input">
-          <input type="number" min="0" ng-minlength="1" ng-model="user.info.reps" placeholder="Reps" required />
+          <input type="number" min="0" ng-minlength="1" ng-model="user.info.reps" placeholder="Reps" ng-required="true" />
         </label>
       </div>
 
       <div class="button-group">
         <div class="row">
           <div class="col col-100">
-            <button type="submit" class="button button-positive button-calculate" ng-click="calcOrm()">
+            <button type="submit" class="button button-positive button-calculate">
               Calculate
             </button>
           </div>

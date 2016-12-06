@@ -2,26 +2,26 @@
   <ion-content>
     <h1 class="header">Fat Free Muscle Index</h1>
 
-    <form class="user-input" ng-model="form">
+    <form class="user-input" name="form" ng-submit="form.$valid && calcFfmi()" novalidate>
       <div class="list list-inset">
         <label class="item item-input">
-          <input type="number" min="0" ng-minlength="1" ng-model="user.info.feet" placeholder="Feet" required />
+          <input type="number" min="0" ng-minlength="1" ng-model="user.info.feet" placeholder="Feet" ng-required="true" />
         </label>
         <label class="item item-input">
-          <input type="number" min="0" ng-minlength="1" ng-model="user.info.inches" placeholder="Inches" required />
+          <input type="number" min="0" ng-minlength="1" ng-model="user.info.inches" placeholder="Inches" ng-required="true" />
         </label>
         <label class="item item-input">
-          <input type="number" min="0" ng-minlength="1" ng-model="user.info.pounds" placeholder="Pounds" required />
+          <input type="number" min="0" ng-minlength="1" ng-model="user.info.pounds" placeholder="Pounds" ng-required="true" />
         </label>
         <label class="item item-input">
-          <input type="number" min="0" ng-minlength="1" ng-model="user.info.bodyfat" placeholder="Body Fat %" required />
+          <input type="number" min="0" ng-minlength="1" ng-model="user.info.bodyfat" placeholder="Body Fat %" ng-required="true" />
         </label>
       </div>
 
       <div class="button-group">
         <div class="row">
           <div class="col col-100">
-            <button type="submit" class="button button-positive button-calculate" ng-click="calcFfmi()">
+            <button type="submit" class="button button-positive button-calculate">
               Calculate
             </button>
           </div>
