@@ -109,3 +109,7 @@
   div#info p {
     line-height: 1.32em;
   }
+  
+  div.info-item {
+    padding: 16px;
+  }
