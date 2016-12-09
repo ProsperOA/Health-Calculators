@@ -25,7 +25,6 @@ angular.module('healthCalculators')
         $info.orm_4Reps = Math.round(orm * 0.88) + globals.lbs;
         $info.orm_5Reps = Math.round(orm * 0.86) + globals.lbs;
         $info.orm_6Reps = Math.round(orm * 0.83) + globals.lbs;
-        $info.orm_7Reps = Math.round(orm * 0.70) + globals.lbs;
         $info.orm_7Reps = Math.round(orm * 0.80) + globals.lbs;
         $info.orm_8Reps = Math.round(orm * 0.78) + globals.lbs;
         $info.orm_9Reps = Math.round(orm * 0.76) + globals.lbs;
