@@ -18,10 +18,10 @@
         </label>
         <div class="row">
           <div class="col col-50">
-            <ion-checkbox ng-model="user.info.gender.male">Male</ion-checkbox>
+            <ion-checkbox ng-model="user.info.gender.male" ng-change="user.info.gender.female = false">Male</ion-checkbox>
           </div>
           <div class="col col-50">
-            <ion-checkbox ng-model="user.info.gender.female">Female</ion-checkbox>
+            <ion-checkbox ng-model="user.info.gender.female" ng-change="user.info.gender.male = false">Female</ion-checkbox>
           </div>
         </div>
       </div>
