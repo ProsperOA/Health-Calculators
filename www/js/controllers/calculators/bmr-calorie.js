@@ -41,8 +41,6 @@ angular.module('healthCalculators')
             case 'Extra Active':
                 bmr *= 1.9;
                 break;
-            default:
-                console.error('No activity level chosen.\nActivity: ' + activity);
         }
 
         $scope.user.info.cal_maintain = Math.round(bmr) + globals.cal_day;
