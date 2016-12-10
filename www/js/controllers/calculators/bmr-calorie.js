@@ -41,15 +41,13 @@ angular.module('healthCalculators')
             case 'Extra Active':
                 bmr *= 1.9;
                 break;
-            default:
-                console.error('No activity level chosen.\nActivity: ' + activity);
         }
 
-        $scope.user.info.cal_maintain = bmr + globals.cal_day;
-        $scope.user.info.cal_lose1 = (bmr - 500) + globals.cal_day;
-        $scope.user.info.cal_lose2 = (bmr - 1000) + globals.cal_day;
-        $scope.user.info.cal_gain1 = (bmr + 500) + globals.cal_day;
-        $scope.user.info.cal_gain2 = (bmr + 1000) + globals.cal_day;
+        $scope.user.info.cal_maintain = Math.round(bmr) + globals.cal_day;
+        $scope.user.info.cal_lose1 = Math.round((bmr - 500)) + globals.cal_day;
+        $scope.user.info.cal_lose2 = Math.round((bmr - 1000)) + globals.cal_day;
+        $scope.user.info.cal_gain1 = Math.round((bmr + 500)) + globals.cal_day;
+        $scope.user.info.cal_gain2 = Math.round((bmr + 1000)) + globals.cal_day;
     };
 
 });
