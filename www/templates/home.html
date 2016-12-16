@@ -37,7 +37,7 @@
       </div>
       <div class="row">
         <div class="col col-100">
-          <button class="button button-block button-balanced" ng-hide="env.loggedIn" ng-click="openModal()">Sign In with Google</button>
+          <button class="button button-block button-balanced" ng-hide="env.loggedIn" ng-click="openModal()">Login with Google</button>
         </div>
       </div>
       <div class="row">
@@ -62,8 +62,11 @@
               </label>
             </div>
             <div class="row">
-              <div class="col col-50 col-offset-25">
-                <button class="button button-block button-balanced" ng-click="">Sign In</button>
+              <div class="col col-50">
+                <button class="button button-block button-balanced" ng-click="signIn()">Login</button>
+              </div>
+              <div class="col col-50">
+                <button class="button button-block button-positive" ng-click="">Sign Up</button>
               </div>
             </div>
             <div class="row">
