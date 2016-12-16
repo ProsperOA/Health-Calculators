@@ -71,17 +71,13 @@
   /* Login Modal */
     #loginModalStyle {
       border-radius: 4px;
-      min-height: 50% !important;
-      height: 50% !important;
-      width: 80%;
-      left: 10%;
-      right: 10%;
-      top: 10%;
-      bottom: 25%;
-    }
-
-    #loginModalStyle div.list.list-inset {
-      width: 313px !important;
+      min-height: 0 !important;
+      height: 350px !important;
+      width: 90%;
+      top: 25%;
+      right: 5%;
+      bottom: 5%;
+      left: 5%;
     }
 
 /** BMR CALCULATOR **/
@@ -125,7 +121,7 @@
   div#info p {
     line-height: 1.32em;
   }
-  
+
   div.info-item {
     padding: 16px;
   }
