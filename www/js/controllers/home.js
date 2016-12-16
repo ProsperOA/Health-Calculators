@@ -6,7 +6,7 @@ angular.module('healthCalculators')
   // Login Modal
   $ionicModal.fromTemplateUrl('loginModal', {
     scope: $scope,
-    animation: 'slide-in-up'
+    animation: 'fade-in-scale'
   }).then(function(modal) {
     $scope.modal = modal;
   });
