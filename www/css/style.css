@@ -68,6 +68,18 @@
     color: #930000;
   }
 
+  /* Login Modal */
+    #loginModalStyle {
+      border-radius: 4px;
+      min-height: 0 !important;
+      height: 350px !important;
+      width: 90%;
+      top: 25%;
+      right: 5%;
+      bottom: 5%;
+      left: 5%;
+    }
+
 /** BMR CALCULATOR **/
 
   /* Activity Level */
@@ -109,7 +121,7 @@
   div#info p {
     line-height: 1.32em;
   }
-  
+
   div.info-item {
     padding: 16px;
   }
