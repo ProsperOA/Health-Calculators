@@ -125,3 +125,12 @@
   div#info p {
     line-height: 1.32em;
   }
+  
+  div.info-item {
+    padding: 16px;
+  }
+
+  div.info-item hr {
+    border-top: #ddd;
+    margin: 16px -16px;
+  }

@@ -2,20 +2,20 @@
   <ion-content>
     <h1 class="header">Target Heart Rate</h1>
 
-    <form class="user-input" ng-model="form" novalidate>
+    <form class="user-input" name="form" ng-submit="form.$valid && calcThr()" novalidate>
       <div class="list list-inset">
         <label class="item item-input">
-          <input type="number" min="0" ng-minlength="1" ng-model="user.info.age" placeholder="Age" />
+          <input type="number" min="0" ng-minlength="1" ng-model="user.info.age" placeholder="Age" ng-required="true" />
         </label>
         <label class="item item-input">
-          <input type="number" min="0" max="100" ng-minlength="1" ng-model="user.info.desired_hr" placeholder="Target Heart Rate %" />
+          <input type="number" min="0" max="100" ng-minlength="1" ng-model="user.info.desired_hr" placeholder="Heart Rate %" ng-required="true" />
         </label>
       </div>
 
       <div class="button-group">
         <div class="row">
           <div class="col col-100">
-            <button type="submit" class="button button-positive button-calculate" ng-click="calcThr()">
+            <button type="submit" class="button button-positive button-calculate">
               Calculate
             </button>
           </div>
@@ -41,7 +41,7 @@
       </div>
       <div class="row">
         <div class="col col-50">
-          <p>Desired Heart Rate:</p>
+          <p>Target Heart Rate:</p>
         </div>
         <div class="col col-50">
           <span>{{ user.info.target_hr}}</span>

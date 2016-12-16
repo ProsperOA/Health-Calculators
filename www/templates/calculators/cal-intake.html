@@ -2,26 +2,26 @@
   <ion-content>
     <h1 class="header">Caloric Intake</h1>
 
-    <form class="user-input" ng-model="form" novalidate>
+    <form class="user-input" name="form" ng-submit="form.$valid && calcCalories(activity)" novalidate>
       <div class="list list-inset">
         <label class="item item-input">
-          <input type="number" min="0" ng-minlength="1" min="0" ng-minlength="1"  ng-model="user.info.feet" placeholder="Feet" required />
+          <input type="number" min="0" ng-minlength="1" min="0" ng-minlength="1"  ng-model="user.info.feet" placeholder="Feet" ng-required="true" />
         </label>
         <label class="item item-input">
-          <input type="number" min="0" ng-minlength="1" ng-model="user.info.inches" placeholder="Inches" required />
+          <input type="number" min="0" ng-minlength="1" ng-model="user.info.inches" placeholder="Inches" ng-required="true" />
         </label>
         <label class="item item-input">
-          <input type="number" min="0" ng-minlength="1" ng-model="user.info.pounds" placeholder="Pounds" required />
+          <input type="number" min="0" ng-minlength="1" ng-model="user.info.pounds" placeholder="Pounds" ng-required="true" />
         </label>
         <label class="item item-input">
-          <input type="number" min="0" ng-minlength="1" ng-model="user.info.age" placeholder="Age" required />
+          <input type="number" min="0" ng-minlength="1" ng-model="user.info.age" placeholder="Age" ng-required="true" />
         </label>
         <div class="row">
           <div class="col col-50">
-            <ion-checkbox ng-model="user.info.gender.male">Male</ion-checkbox>
+            <ion-checkbox ng-model="user.info.gender.male" ng-change="user.info.gender.female = false">Male</ion-checkbox>
           </div>
           <div class="col col-50">
-            <ion-checkbox ng-model="user.info.gender.female">Female</ion-checkbox>
+            <ion-checkbox ng-model="user.info.gender.female" ng-change="user.info.gender.male = false">Female</ion-checkbox>
           </div>
         </div>
         <div class="row">
@@ -45,7 +45,7 @@
       <div class="button-group">
         <div class="row">
           <div class="col col-100">
-            <button type="submit" class="button button-positive button-calculate" ng-click="calcCalories(activity)">
+            <button type="submit" class="button button-positive button-calculate">
               Calculate
             </button>
           </div>
