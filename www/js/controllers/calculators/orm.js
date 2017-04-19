@@ -13,6 +13,7 @@ angular.module('healthCalculators')
      * @desc     Calculates One Repetition Maximum
      **/
     $scope.calcOrm = function() {
+      $scope.setUserData();
       var $info = $scope.user.info;
 
       oneRepMax = $info.weight_lifted / (1.0278 - (0.0278 * $info.reps));
@@ -23,6 +24,7 @@ angular.module('healthCalculators')
      //   console.log($info.key);
      // });
 
+     // FIXME: D.R.Y.
      // Percentages
      $info.orm_95 = Math.round(oneRepMax * 0.95) + globals.lbs;
      $info.orm_90 = Math.round(oneRepMax * 0.90) + globals.lbs;

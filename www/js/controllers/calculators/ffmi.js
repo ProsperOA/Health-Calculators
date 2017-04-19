@@ -12,6 +12,8 @@ angular.module('healthCalculators')
      * @desc     Calculates fat free muscle index
      **/
     $scope.calcFfmi = function() {
+      $scope.setUserData();
+
       height  = $scope.user.info.feet * 12 + $scope.user.info.inches;
       pounds  = $scope.user.info.pounds;
       bodyfat = $scope.user.info.bodyfat;
@@ -25,19 +27,19 @@ angular.module('healthCalculators')
       $scope.user.info.adjFfmi = adjFfmi.toFixed(2);
 
       if (ffmi < 18) {
-        $scope.user.info.category = 'Below Average';
+        $scope.user.info.ffmi_category = 'Below Average';
       } else if (ffmi >= 18 && ffmi <= 19.9) {
-        $scope.user.info.category = 'Average';
+        $scope.user.info.ffmi_category = 'Average';
       } else if (ffmi >= 20 && ffmi <= 21.9) {
-        $scope.user.info.category = 'Above Average';
+        $scope.user.info.ffmi_category = 'Above Average';
       } else if (ffmi >= 22 && ffmi <= 22.9) {
-        $scope.user.info.category = 'Excellent';
+        $scope.user.info.ffmi_category = 'Excellent';
       } else if (ffmi >= 23 && ffmi <= 25.9) {
-        $scope.user.info.category = 'Superior';
+        $scope.user.info.ffmi_category = 'Superior';
       } else if (ffmi >= 26 && ffmi <= 27.9) {
-        $scope.user.info.category = 'Suspicious';
+        $scope.user.info.ffmi_category = 'Suspicious';
       } else if (ffmi >= 28) {
-        $scope.user.info.category = 'Highly Unlikely';
+        $scope.user.info.ffmi_category = 'Highly Unlikely';
       } else {
         console.error('ERROR: Invalid value.');
       }

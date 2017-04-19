@@ -12,6 +12,8 @@ angular.module('healthCalculators')
      * @desc     Calculates basal metabolic rate
      **/
     $scope.calcBmr = function() {
+      $scope.setUserData();
+
       age       = $scope.user.info.age;
       gender    = $scope.user.info.gender;
       height_cm = ($scope.user.info.feet * 12 + $scope.user.info.inches) * 2.54;

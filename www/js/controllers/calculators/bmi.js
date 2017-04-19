@@ -12,6 +12,7 @@ angular.module('healthCalculators')
      * @desc     Calculates body mass index
      **/
     $scope.calcBmi = function() {
+      $scope.setUserData();
 
       height = $scope.user.info.feet * 12 + $scope.user.info.inches;
       pounds = $scope.user.info.pounds;
@@ -29,7 +30,7 @@ angular.module('healthCalculators')
       } else if (bmi >= 40) {
         weightType = 'Morbidly Obese';
       }
-      $scope.user.info.category = weightType;
+      $scope.user.info.bmi_category = weightType;
     };
 
   });

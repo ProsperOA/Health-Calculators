@@ -12,6 +12,8 @@ angular.module('healthCalculators')
    * @desc     Calculates target heart rateds
    **/
   $scope.calcThr = function() {
+   $scope.setUserData();
+
     age       = $scope.user.info.age;
     target_hr = $scope.user.info.desired_hr;
 

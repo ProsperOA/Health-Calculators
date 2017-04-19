@@ -8,7 +8,13 @@
  **/
 angular.module('healthCalculators')
   .controller('MainCtrl', function($scope, $rootScope, $timeout, loginFactory) {
-    var first_name;
+    var first_name, feet, inches, weight, age, body_fat, gender;
+
+    $scope.setUserData = function() {
+      angular.forEach($scope.user.info, function(val, $key) {
+        $scope.user.info.$key = val;
+      });
+    }
 
     // Reset all $scope values for user.info
     $scope.reset = function() {
