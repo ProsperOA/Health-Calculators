@@ -4,13 +4,19 @@ angular.module('healthCalculators')
 .factory('loginFactory', function ($q, $http, $rootScope, $location, $window) {
   var provider = new firebase.auth.GoogleAuthProvider();
   provider.addScope('https://www.googleapis.com/auth/plus.login');
-  var auth = firebase.auth();
+  var auth     = firebase.auth();
   var database = firebase.database();
-  var user = {'uid':'', 'name':'', 'email':'', 'img':'', 'active':false};
-  var env = {'loggedIn': false};
+  var user = {
+    'uid'    : '',
+    'name'   : '',
+    'email'  : '',
+    'img'    : '',
+    'active' : false
+  };
+  var env = { 'loggedIn': false };
   var observerCallbacks = [];
 
-  var notifyObservers = function(){
+  var notifyObservers = function() {
     angular.forEach(observerCallbacks, function(callback){
       callback();
     });
@@ -100,6 +106,7 @@ angular.module('healthCalculators')
     },
     signOut: function() {
       firebase.auth().signOut().then(function() {
+        $location.path('/home'); // return to home screen
         notifyObservers();
         env.loggedIn = false;
       }, function(error) {

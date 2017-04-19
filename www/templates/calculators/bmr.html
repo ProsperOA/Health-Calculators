@@ -1,5 +1,5 @@
 <ion-view view-title="BMR Calculator">
-  <ion-content>
+  <ion-content class="calc-view">
     <h1 class="header">Basal Metabolic Rate</h1>
 
     <form class="user-input" name="form" ng-submit="form.$valid && calcBmr()" novalidate>
@@ -44,18 +44,18 @@
       </div>
     </form>
 
-      <div class="user-results center">
-        <div class="row">
-          <div class="col col-100">
-            <p>BMR:</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col col-100">
-            <span>{{ user.info.bmr }}</span>
-          </div>
+    <div class="user-results center">
+      <div class="row">
+        <div class="col col-100">
+          <p>BMR:</p>
         </div>
       </div>
+      <div class="row">
+        <div class="col col-100">
+          <span>{{ user.info.bmr }}</span>
+        </div>
+      </div>
+    </div>
 
   </ion-content>
 </ion-view>

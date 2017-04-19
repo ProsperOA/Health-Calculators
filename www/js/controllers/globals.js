@@ -1,11 +1,12 @@
-// Global Variables
-
+/**
+ * @module {Factory} globals
+ * @desc Global variables
+ **/
 angular.module('healthCalculators')
-.factory('globals', function () {
-  
+  .factory('globals', function() {
+
     return {
-      cal_day: ' Calories/Day',
+      CAL_DAY: ' Calories/Day',
       lbs: ' lbs'
     };
-});
-  
+  });

@@ -1,83 +1,74 @@
 <ion-view view-title="Home">
-  <ion-content id="home">
+  <ion-content id="home" class="calc-view">
     <h1 class="header">Health Calculators</h1>
-    <p>
-      An all-in-one suite for health and fitness<br />
-      related calculators
-    </p>
 
-      <div class="row">
-        <div class="col col-50">
-          <a class="button button-block button-positive" href="#/app/cal-intake">Caloric Intake</a>
-        </div>
-        <div class="col col-50">
-          <a class="button button-block button-positive" href="#/app/bmr">Basal Metabolic Rate</a>
-        </div>
+    <div class="row">
+      <div class="col col-50">
+        <a class="button button-block button-positive" href="#/app/cal-intake">Caloric Intake</a>
       </div>
-      <div class="row">
-        <div class="col col-50">
-          <a class="button button-block button-positive" href="#/app/bmi">Body Mass Index</a>
-        </div>
-        <div class="col col-50">
-          <a class="button button-block button-positive" href="#/app/ffmi">Fat Free Muscle Index</a>
-        </div>
+      <div class="col col-50">
+        <a class="button button-block button-positive" href="#/app/bmr">Basal Metabolic</a>
       </div>
-      <div class="row">
-        <div class="col col-50">
-          <a class="button button-block button-positive" href="#/app/lbm">Lean Body Mass</a>
-        </div>
-        <div class="col col-50">
-          <a class="button button-block button-positive" href="#/app/orm">One Rep Max</a>
-        </div>
+    </div>
+    <div class="row">
+      <div class="col col-50">
+        <a class="button button-block button-positive" href="#/app/bmi">Body Mass Index</a>
       </div>
-      <div class="row">
-        <div class="col col-50 col-offset-25">
-          <a class="button button-block button-positive" href="#/app/thr">Target Heart Rate</a>
-        </div>
+      <div class="col col-50">
+        <a class="button button-block button-positive" href="#/app/ffmi">Fat Free Muscle</a>
       </div>
-      <div class="row">
-        <div class="col col-100">
-          <button class="button button-block button-balanced" ng-hide="env.loggedIn" ng-click="openModal()">Login with Google</button>
-        </div>
+    </div>
+    <div class="row">
+      <div class="col col-50">
+        <a class="button button-block button-positive" href="#/app/lbm">Lean Body Mass</a>
       </div>
-      <div class="row">
-        <div class="col col-100">
-          <h4 id="user-name" ng-show="env.loggedIn">Welcome Back, {{ user.name }}!</h4>
-        </div>
+      <div class="col col-50">
+        <a class="button button-block button-positive" href="#/app/orm">One Rep Max</a>
       </div>
+    </div>
+    <div class="row">
+      <div class="col col-50 col-offset-25">
+        <a class="button button-block button-positive" href="#/app/thr">Target Heart Rate</a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col col-100">
+        <button class="button button-block button-balanced" ng-hide="env.loggedIn" ng-click="openModal()">Login with Google</button>
+      </div>
+    </div>
 
-      <script id="loginModal" type="text/ng-template">
-        <ion-modal-view id="loginModalStyle">
-          <ion-header-bar class="bar-stable">
-            <h1 class="title">Login</h1>
-          </ion-header-bar>
-          <ion-content>
+    <script id="loginModal" type="text/ng-template">
+      <ion-modal-view id="loginModalStyle">
+        <ion-header-bar class="bar-stable">
+          <h1 class="title">Login</h1>
+        </ion-header-bar>
+        <ion-content>
 
-            <div class="list list-inset">
-              <label class="item item-input">
+          <div class="list list-inset">
+            <label class="item item-input">
                 <input type="text" placeholder="Email">
               </label>
-              <label class="item item-input">
+            <label class="item item-input">
                 <input type="text" placeholder="Password">
               </label>
+          </div>
+          <div class="row">
+            <div class="col col-50">
+              <button class="button button-block button-balanced" ng-click="signIn()">Login</button>
             </div>
-            <div class="row">
-              <div class="col col-50">
-                <button class="button button-block button-balanced" ng-click="signIn()">Login</button>
-              </div>
-              <div class="col col-50">
-                <button class="button button-block button-positive" ng-click="">Sign Up</button>
-              </div>
+            <div class="col col-50">
+              <button class="button button-block button-positive" ng-click="">Sign Up</button>
             </div>
-            <div class="row">
-              <div class="col col-50 col-offset-25">
-                <button class="button button-block button-stable" ng-click="closeModal()">Close</button>
-              </div>
+          </div>
+          <div class="row">
+            <div class="col col-50 col-offset-25">
+              <button class="button button-block button-stable" ng-click="closeModal()">Close</button>
             </div>
+          </div>
 
-            </ion-content>
-          </ion-modal-view>
-      </script>
+        </ion-content>
+      </ion-modal-view>
+    </script>
 
   </ion-content>
 </ion-view>

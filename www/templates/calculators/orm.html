@@ -1,5 +1,5 @@
 <ion-view view-title="1RM Calculator">
-  <ion-content>
+  <ion-content class="calc-view">
     <h1 class="header">One Rep Max</h1>
 
     <form class="user-input" name="form" ng-submit="form.$valid && calcOrm()" novalidate>
@@ -28,78 +28,80 @@
           </div>
         </div>
       </div>
+    </form>
 
-      <div class="user-results">
-        <div class="row center">
-          <div class="col col-100">
-            <p>One Rep Max:</p>
-          </div>
-        </div>
-        <div class="row center">
-          <div class="col col-100">
-            <span>{{ user.info.orm }}</span>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col col-25">
-            <p>95% 1RM:</p>
-          </div>
-          <div class="col col-25">
-            <span>{{ user.info.orm_95 }}</span>
-          </div>
-          <div class="col col-25">
-            <p>75% 1RM:</p>
-          </div>
-          <div class="col col-25">
-            <span>{{ user.info.orm_75 }}</span>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col col-25">
-            <p>90% 1RM:</p>
-          </div>
-          <div class="col col-25">
-            <span>{{ user.info.orm_90 }}</span>
-          </div>
-          <div class="col col-25">
-            <p>70% 1RM:</p>
-          </div>
-          <div class="col col-25">
-            <span>{{ user.info.orm_70 }}</span>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col col-25">
-            <p>85% 1RM:</p>
-          </div>
-          <div class="col col-25">
-            <span>{{ user.info.orm_85 }}</span>
-          </div>
-          <div class="col col-25">
-            <p>65% 1RM:</p>
-          </div>
-          <div class="col col-25">
-            <span>{{ user.info.orm_65 }}</span>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col col-25">
-            <p>80% 1RM:</p>
-          </div>
-          <div class="col col-25">
-            <span>{{ user.info.orm_80 }}</span>
-          </div>
-          <div class="col col-25">
-            <p>60% 1RM:</p>
-          </div>
-          <div class="col col-25">
-            <span>{{ user.info.orm_60 }}</span>
-          </div>
+  <!-- Maximum Repetitions -->
+    <div class="user-results">
+      <div class="row center">
+        <div class="col col-100">
+          <p>One Rep Max:</p>
         </div>
       </div>
-    </form>
+      <div class="row center">
+        <div class="col col-100">
+          <span>{{ user.info.orm }}</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col col-25">
+          <p>95% 1RM:</p>
+        </div>
+        <div class="col col-25">
+          <span>{{ user.info.orm_95 }}</span>
+        </div>
+        <div class="col col-25">
+          <p>75% 1RM:</p>
+        </div>
+        <div class="col col-25">
+          <span>{{ user.info.orm_75 }}</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col col-25">
+          <p>90% 1RM:</p>
+        </div>
+        <div class="col col-25">
+          <span>{{ user.info.orm_90 }}</span>
+        </div>
+        <div class="col col-25">
+          <p>70% 1RM:</p>
+        </div>
+        <div class="col col-25">
+          <span>{{ user.info.orm_70 }}</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col col-25">
+          <p>85% 1RM:</p>
+        </div>
+        <div class="col col-25">
+          <span>{{ user.info.orm_85 }}</span>
+        </div>
+        <div class="col col-25">
+          <p>65% 1RM:</p>
+        </div>
+        <div class="col col-25">
+          <span>{{ user.info.orm_65 }}</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col col-25">
+          <p>80% 1RM:</p>
+        </div>
+        <div class="col col-25">
+          <span>{{ user.info.orm_80 }}</span>
+        </div>
+        <div class="col col-25">
+          <p>60% 1RM:</p>
+        </div>
+        <div class="col col-25">
+          <span>{{ user.info.orm_60 }}</span>
+        </div>
+      </div>
+    </div>
     <hr />
 
+  <!-- Reps Chart -->
     <div class="row user-results" id="reps-chart">
       <div class="col col-100">
         <div class="row">

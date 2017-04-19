@@ -1,4 +1,10 @@
-// BMR Calculator Controller
+/**
+ * @module {Controller} - HomeCtrl
+ * @desc   Home Screen Calculator Controller
+ * @param  {Object}     $scope       - View data binding
+ * @param  {Object}     $ionicModal  - Ionic modal
+ * @param  {Controller} loginFactory - Login Controller
+ **/
 
 angular.module('healthCalculators')
 .controller('HomeCtrl', function ($scope, $ionicModal, loginFactory) {

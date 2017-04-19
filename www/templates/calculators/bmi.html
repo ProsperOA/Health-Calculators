@@ -1,5 +1,5 @@
 <ion-view view-title="BMI Calculator">
-  <ion-content>
+  <ion-content class="calc-view">
     <h1 class="header">Body Mass Index</h1>
 
     <form class="user-input" name="form" ng-submit="form.$valid && calcBmi()" novalidate>
@@ -53,6 +53,7 @@
     </div>
     <hr />
 
+    <!-- BMI Categories -->
     <div class="row">
       <div class="col col-100">
         <table class="health-chart">
@@ -64,7 +65,7 @@
           <tbody>
             <tr>
               <td>Underweight</td>
-              <td>< 18.5</td>
+              <td>&#60; 18.5</td>
             </tr>
             <tr>
               <td>Normal Weight</td>
@@ -80,7 +81,7 @@
             </tr>
             <tr>
               <td>Morbidly Obese</td>
-              <td>> 40</td>
+              <td>&#62; 40</td>
             </tr>
           </tbody>
         </table>

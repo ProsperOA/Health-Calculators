@@ -17,10 +17,9 @@
     </ion-header-bar>
     <ion-content>
       <ion-list ng-click="reset()">
-        <ion-item menu-close ng-show="env.loggedIn" ng-click="signOut()">
+        <ion-item menu-close ng-show="env.loggedIn">
           <img class="img-user" ng-style="{'background-image':'url('+user.img+')'}" />
-          <span>{{ user.name }}</span>
-          <p id="sign-out">Logout</p>
+          <div id="user-name">{{ user.name }}</div>
         </ion-item>
         <ion-item menu-close href="#/app/home">
           Home
@@ -63,6 +62,9 @@
         </ion-item>
         <ion-item menu-close ng-hide="env.loggedIn" ng-click="signIn()">
           Login with Google
+        </ion-item>
+        <ion-item menu-close ng-show="env.loggedIn" ng-click="signOut()">
+          Logout
         </ion-item>
       </ion-list>
     </ion-content>
