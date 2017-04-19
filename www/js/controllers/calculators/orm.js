@@ -14,10 +14,9 @@ angular.module('healthCalculators')
      **/
     $scope.calcOrm = function() {
       $scope.setUserData();
-      var $info = $scope.user.info;
 
-      oneRepMax = $info.weight_lifted / (1.0278 - (0.0278 * $info.reps));
-      $info.orm = Math.round(oneRepMax) + globals.lbs;
+      oneRepMax = $scope.user.info.weight_lifted / (1.0278 - (0.0278 * $scope.user.info.reps));
+      $scope.user.info.orm = Math.round(oneRepMax) + globals.lbs;
 
      // angular.forEach(oneRepMaxPercentages, function(val, $key) {
      //  $info.$key = math.round(onerepmax * val) + globals.lbs;
@@ -26,30 +25,30 @@ angular.module('healthCalculators')
 
      // FIXME: D.R.Y.
      // Percentages
-     $info.orm_95 = Math.round(oneRepMax * 0.95) + globals.lbs;
-     $info.orm_90 = Math.round(oneRepMax * 0.90) + globals.lbs;
-     $info.orm_85 = Math.round(oneRepMax * 0.85) + globals.lbs;
-     $info.orm_80 = Math.round(oneRepMax * 0.80) + globals.lbs;
-     $info.orm_75 = Math.round(oneRepMax * 0.75) + globals.lbs;
-     $info.orm_70 = Math.round(oneRepMax * 0.70) + globals.lbs;
-     $info.orm_65 = Math.round(oneRepMax * 0.65) + globals.lbs;
-     $info.orm_60 = Math.round(oneRepMax * 0.60) + globals.lbs;
+     $scope.results.orm_95 = Math.round(oneRepMax * 0.95) + globals.lbs;
+     $scope.results.orm_90 = Math.round(oneRepMax * 0.90) + globals.lbs;
+     $scope.results.orm_85 = Math.round(oneRepMax * 0.85) + globals.lbs;
+     $scope.results.orm_80 = Math.round(oneRepMax * 0.80) + globals.lbs;
+     $scope.results.orm_75 = Math.round(oneRepMax * 0.75) + globals.lbs;
+     $scope.results.orm_70 = Math.round(oneRepMax * 0.70) + globals.lbs;
+     $scope.results.orm_65 = Math.round(oneRepMax * 0.65) + globals.lbs;
+     $scope.results.orm_60 = Math.round(oneRepMax * 0.60) + globals.lbs;
 
       // Repetitions
-      $info.orm_1Reps  = Math.round(oneRepMax) + globals.lbs;
-      $info.orm_2Reps  = Math.round(oneRepMax * 0.95) + globals.lbs;
-      $info.orm_3Reps  = Math.round(oneRepMax * 0.90) + globals.lbs;
-      $info.orm_4Reps  = Math.round(oneRepMax * 0.88) + globals.lbs;
-      $info.orm_5Reps  = Math.round(oneRepMax * 0.86) + globals.lbs;
-      $info.orm_6Reps  = Math.round(oneRepMax * 0.83) + globals.lbs;
-      $info.orm_7Reps  = Math.round(oneRepMax * 0.80) + globals.lbs;
-      $info.orm_8Reps  = Math.round(oneRepMax * 0.78) + globals.lbs;
-      $info.orm_9Reps  = Math.round(oneRepMax * 0.76) + globals.lbs;
-      $info.orm_10Reps = Math.round(oneRepMax * 0.75) + globals.lbs;
-      $info.orm_11Reps = Math.round(oneRepMax * 0.72) + globals.lbs;
-      $info.orm_12Reps = Math.round(oneRepMax * 0.70) + globals.lbs;
-      $info.orm_15Reps = Math.round(oneRepMax * 0.66) + globals.lbs;
-      $info.orm_20Reps = Math.round(oneRepMax * 0.60) + globals.lbs;
+      $scope.results.orm_1Reps  = Math.round(oneRepMax) + globals.lbs;
+      $scope.results.orm_2Reps  = Math.round(oneRepMax * 0.95) + globals.lbs;
+      $scope.results.orm_3Reps  = Math.round(oneRepMax * 0.90) + globals.lbs;
+      $scope.results.orm_4Reps  = Math.round(oneRepMax * 0.88) + globals.lbs;
+      $scope.results.orm_5Reps  = Math.round(oneRepMax * 0.86) + globals.lbs;
+      $scope.results.orm_6Reps  = Math.round(oneRepMax * 0.83) + globals.lbs;
+      $scope.results.orm_7Reps  = Math.round(oneRepMax * 0.80) + globals.lbs;
+      $scope.results.orm_8Reps  = Math.round(oneRepMax * 0.78) + globals.lbs;
+      $scope.results.orm_9Reps  = Math.round(oneRepMax * 0.76) + globals.lbs;
+      $scope.results.orm_10Reps = Math.round(oneRepMax * 0.75) + globals.lbs;
+      $scope.results.orm_11Reps = Math.round(oneRepMax * 0.72) + globals.lbs;
+      $scope.results.orm_12Reps = Math.round(oneRepMax * 0.70) + globals.lbs;
+      $scope.results.orm_15Reps = Math.round(oneRepMax * 0.66) + globals.lbs;
+      $scope.results.orm_20Reps = Math.round(oneRepMax * 0.60) + globals.lbs;
 
     };
 

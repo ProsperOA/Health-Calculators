@@ -23,23 +23,23 @@ angular.module('healthCalculators')
       ffmi      = (leanMass / 2.2) / Math.pow(height * 0.0254, 2) * 2.20462;
       adjFfmi   = ffmi + (6.0 * ((height * 0.0254) - 1.8));
 
-      $scope.user.info.ffmi = ffmi.toFixed(2);
-      $scope.user.info.adjFfmi = adjFfmi.toFixed(2);
+      $scope.results.ffmi = ffmi.toFixed(2);
+      $scope.results.adjFfmi = adjFfmi.toFixed(2);
 
       if (ffmi < 18) {
-        $scope.user.info.ffmi_category = 'Below Average';
+        $scope.results.ffmi_category = 'Below Average';
       } else if (ffmi >= 18 && ffmi <= 19.9) {
-        $scope.user.info.ffmi_category = 'Average';
+        $scope.results.ffmi_category = 'Average';
       } else if (ffmi >= 20 && ffmi <= 21.9) {
-        $scope.user.info.ffmi_category = 'Above Average';
+        $scope.results.ffmi_category = 'Above Average';
       } else if (ffmi >= 22 && ffmi <= 22.9) {
-        $scope.user.info.ffmi_category = 'Excellent';
+        $scope.results.ffmi_category = 'Excellent';
       } else if (ffmi >= 23 && ffmi <= 25.9) {
-        $scope.user.info.ffmi_category = 'Superior';
+        $scope.results.ffmi_category = 'Superior';
       } else if (ffmi >= 26 && ffmi <= 27.9) {
-        $scope.user.info.ffmi_category = 'Suspicious';
+        $scope.results.ffmi_category = 'Suspicious';
       } else if (ffmi >= 28) {
-        $scope.user.info.ffmi_category = 'Highly Unlikely';
+        $scope.results.ffmi_category = 'Highly Unlikely';
       } else {
         console.error('ERROR: Invalid value.');
       }

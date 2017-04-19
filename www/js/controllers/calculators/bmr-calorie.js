@@ -26,7 +26,7 @@ angular.module('healthCalculators')
         addend = -161;
 
       bmr = Math.round(((10 * weight_kg) + (6.25 * height_cm) - (5 * age) + addend));
-      $scope.user.info.bmr = bmr + globals.CAL_DAY;
+      $scope.results.bmr = bmr + globals.CAL_DAY;
     };
 
     /**
@@ -57,11 +57,11 @@ angular.module('healthCalculators')
           break;
       }
 
-      $scope.user.info.cal_maintain = Math.round(bmr) + globals.CAL_DAY;
-      $scope.user.info.cal_lose1    = Math.round((bmr - 500))  + globals.CAL_DAY;
-      $scope.user.info.cal_lose2    = Math.round((bmr - 1000)) + globals.CAL_DAY;
-      $scope.user.info.cal_gain1    = Math.round((bmr + 500))  + globals.CAL_DAY;
-      $scope.user.info.cal_gain2    = Math.round((bmr + 1000)) + globals.CAL_DAY;
+      $scope.results.cal_maintain = Math.round(bmr) + globals.CAL_DAY;
+      $scope.results.cal_lose1    = Math.round((bmr - 500))  + globals.CAL_DAY;
+      $scope.results.cal_lose2    = Math.round((bmr - 1000)) + globals.CAL_DAY;
+      $scope.results.cal_gain1    = Math.round((bmr + 500))  + globals.CAL_DAY;
+      $scope.results.cal_gain2    = Math.round((bmr + 1000)) + globals.CAL_DAY;
     };
 
   });
