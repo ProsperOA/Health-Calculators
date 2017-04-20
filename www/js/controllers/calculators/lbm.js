@@ -13,12 +13,9 @@ angular.module('healthCalculators')
      * @desc     Calculates lean body mass
      **/
     $scope.calcLbm = function() {
-      $scope.setUserData();
+      var userData = $scope.setUserData();
 
-      pounds  = $scope.user.info.pounds;
-      bodyfat = $scope.user.info.bodyfat;
-
-      userLbm = pounds - bodyfat;
+      userLbm = userData.pounds - userData.bodyfat;
       $scope.results.lbm = userLbm + globals.lbs;
     };
 

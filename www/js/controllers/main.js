@@ -8,13 +8,14 @@
  **/
 angular.module('healthCalculators')
   .controller('MainCtrl', function($scope, $rootScope, $timeout, loginFactory) {
-    var first_name, feet, inches, weight, age, body_fat, gender;
-    var userData = {};
+    var userData   = {};
     $scope.results = {};
 
     $scope.setUserData = function() {
       angular.forEach($scope.user.info, function(val, $key) {
         $scope.user.info.$key = val;
+
+        // FIXME: loop returning '$key' when iterating
         if ($key === '$key')
           return;
 
@@ -27,7 +28,7 @@ angular.module('healthCalculators')
             userData.inches = val;
             break;
           case 'pounds':
-            userData.weight = val+' lbs';
+            userData.pounds = val;
             break;
           case 'age':
             userData.age = val;
@@ -40,11 +41,9 @@ angular.module('healthCalculators')
             break;
           default:
             console.warn('{'+$key+': '+val+'} was not added to user data.');
-            //console.log($key);
-            //console.log(val);
         }
       });
-      console.log(userData);
+      return userData;
     }
 
     // Reset all $scope values for user.info
@@ -71,10 +70,10 @@ angular.module('healthCalculators')
     loginFactory.registerObserverCallback(
       function() {
         $timeout(function() {
-          $scope.user = loginFactory.getUser();
-          first_name = loginFactory.getUser().name;
-          first_name = first_name.substring(0, first_name.indexOf(' '));
-          $scope.user.name = first_name;
+          $scope.user       = loginFactory.getUser();
+          userData.fullName = loginFactory.getUser().name;
+          userData.firstName = userData.fullName.substring(0, userData.fullName.indexOf(' '));
+          $scope.user.name   = userData.firstName;
 
           $scope.env = loginFactory.getEnv();
           $scope.$apply();

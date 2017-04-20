@@ -6,14 +6,14 @@
  **/
 angular.module('healthCalculators')
   .controller('OrmCtrl', function($scope, globals) {
-    var oneRepMax;
 
     /**
      * @function calcOrm
      * @desc     Calculates One Repetition Maximum
      **/
     $scope.calcOrm = function() {
-      $scope.setUserData();
+      var userData = $scope.setUserData();
+      var oneRepMax;
 
       oneRepMax = $scope.user.info.weight_lifted / (1.0278 - (0.0278 * $scope.user.info.reps));
       $scope.user.info.orm = Math.round(oneRepMax) + globals.lbs;

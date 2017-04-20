@@ -5,25 +5,22 @@
  **/
 angular.module('healthCalculators')
   .controller('FfmiCtrl', function($scope) {
-    var height, pounds, bodyfat, weight_kg, leanMass, ffmi, adjFfmi;
+    var height, bodyfat, weight_kg, leanMass, ffmi, adjFfmi;
 
     /**
      * @function calcFfmi
      * @desc     Calculates fat free muscle index
      **/
     $scope.calcFfmi = function() {
-      $scope.setUserData();
+      userData = $scope.setUserData();
 
-      height  = $scope.user.info.feet * 12 + $scope.user.info.inches;
-      pounds  = $scope.user.info.pounds;
-      bodyfat = $scope.user.info.bodyfat;
-
-      weight_kg = pounds / 2.20462;
-      leanMass  = (weight_kg) * (1.0 - (bodyfat / 100));
+      height    = (userData.feet * 12) + userData.inches;
+      weight_kg = userData.pounds / 2.20462;
+      leanMass  = weight_kg * (1.0 - (userData.bodyfat / 100));
       ffmi      = (leanMass / 2.2) / Math.pow(height * 0.0254, 2) * 2.20462;
       adjFfmi   = ffmi + (6.0 * ((height * 0.0254) - 1.8));
 
-      $scope.results.ffmi = ffmi.toFixed(2);
+      $scope.results.ffmi    = ffmi.toFixed(2);
       $scope.results.adjFfmi = adjFfmi.toFixed(2);
 
       if (ffmi < 18) {

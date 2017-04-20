@@ -1,22 +1,21 @@
 /**
- * @module {Controller} BmiCtrl
- * @desc   Body Mass Index Calculator Controller
- * @param  {Object} $scope - View data binding
+ * @module {controller} bmictrl
+ * @desc   body mass index calculator controller
+ * @param  {object} $scope - view data binding
  **/
 angular.module('healthCalculators')
   .controller('BmiCtrl', function($scope) {
-    var height, pounds, bmi, category;
+    var height, userBmi, weightType;
 
     /**
      * @function calcBmi
      * @desc     Calculates body mass index
      **/
     $scope.calcBmi = function() {
-      $scope.setUserData();
+      var userData = $scope.setUserData();
 
-      height = ($scope.user.info.feet * 12) + $scope.user.info.inches;
-      pounds = $scope.user.info.pounds;
-      userBmi    = ((pounds / (height * height)) * 703).toFixed(2);
+      height  = (userData.feet * 12) + userData.inches;
+      userBmi = ((userData.pounds / (height * height)) * 703).toFixed(2);
       $scope.results.bmi = userBmi;
 
       if (userBmi < 18.5) {

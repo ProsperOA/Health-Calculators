@@ -5,19 +5,20 @@
  **/
 angular.module('healthCalculators')
   .controller('Bmr-CalorieCtrl', function($scope, globals) {
-    var addend, bmr, age, gender, height_cm, weight_kg, result;
+    var addend, userBmr;
+    var userData = {};
 
     /**
      * @function calcBmr
      * @desc     Calculates basal metabolic rate
      **/
     $scope.calcBmr = function() {
-      $scope.setUserData();
+      userData = $scope.setUserData();
 
-      age       = $scope.user.info.age;
-      gender    = $scope.user.info.gender;
-      height_cm = ($scope.user.info.feet * 12 + $scope.user.info.inches) * 2.54;
-      weight_kg = ($scope.user.info.pounds) * 0.45359237;
+      age       = userData.age;
+      gender    = userData.gender;
+      height_cm = ((userData.feet * 12) + userData.inches) * 2.54;
+      weight_kg = (userData.pounds) * 0.45359237;
 
       // Set value addend based on gender
       if (gender.male)
@@ -25,8 +26,8 @@ angular.module('healthCalculators')
       else // Female
         addend = -161;
 
-      bmr = Math.round(((10 * weight_kg) + (6.25 * height_cm) - (5 * age) + addend));
-      $scope.results.bmr = bmr + globals.CAL_DAY;
+      userBmr = Math.round(((10 * weight_kg) + (6.25 * height_cm) - (5 * age) + addend));
+      $scope.results.bmr = userBmr + globals.CAL_DAY;
     };
 
     /**
@@ -41,27 +42,27 @@ angular.module('healthCalculators')
       // Determine activity level multiplier
       switch (activity) {
         case 'Sedentary':
-          bmr *= 1.2;
+          userBmr *= 1.2;
           break;
         case 'Lightly Active':
-          bmr *= 1.375;
+          userBmr *= 1.375;
           break;
         case 'Moderately Active':
-          bmr *= 1.55;
+          userBmr *= 1.55;
           break;
         case 'Very Active':
-          bmr *= 1.725;
+          userBmr *= 1.725;
           break;
         case 'Extra Active':
-          bmr *= 1.9;
+          userBmr *= 1.9;
           break;
       }
 
-      $scope.results.cal_maintain = Math.round(bmr) + globals.CAL_DAY;
-      $scope.results.cal_lose1    = Math.round((bmr - 500))  + globals.CAL_DAY;
-      $scope.results.cal_lose2    = Math.round((bmr - 1000)) + globals.CAL_DAY;
-      $scope.results.cal_gain1    = Math.round((bmr + 500))  + globals.CAL_DAY;
-      $scope.results.cal_gain2    = Math.round((bmr + 1000)) + globals.CAL_DAY;
+      $scope.results.cal_maintain = Math.round(userBmr) + globals.CAL_DAY;
+      $scope.results.cal_lose1    = Math.round((userBmr - 500))  + globals.CAL_DAY;
+      $scope.results.cal_lose2    = Math.round((userBmr - 1000)) + globals.CAL_DAY;
+      $scope.results.cal_gain1    = Math.round((userBmr + 500))  + globals.CAL_DAY;
+      $scope.results.cal_gain2    = Math.round((userBmr + 1000)) + globals.CAL_DAY;
     };
 
   });
