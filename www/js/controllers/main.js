@@ -47,7 +47,7 @@ angular.module('healthCalculators')
     }
 
     // Reset all $scope values for user.info
-    $scope.reset = function() {
+    $scope.clear = function() {
       $scope.user.info = {};
       $scope.results   = {};
     };

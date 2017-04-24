@@ -112,6 +112,10 @@ ion-content.calc-view {
       margin: 0.2em;
     }
 
+    button.button.button-calculate {
+      width: 100px;
+    }
+
   /* Categories */
     table.health-chart {
       margin: 0 auto;

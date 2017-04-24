@@ -14,27 +14,50 @@ angular.module('healthCalculators')
     $scope.calcOrm = function() {
       var userData = $scope.setUserData();
       var oneRepMax;
+      const ORM_VALUES = {
+        "orm_95": 0.95,
+        "orm_90": 0.90,
+        "orm_85": 0.85,
+        "orm_80": 0.80,
+        "orm_75": 0.75,
+        "orm_70": 0.70,
+        "orm_65": 0.70,
+        "orm_60": 0.60
+      };
+
+      const ORM_PERCENTAGES = {
+        "orm_1Reps" : 0,
+        "orm_Reps" : 0,
+        "orm_Reps" : 0,
+        "orm_Reps" : 0,
+        "orm_Reps" : 0,
+        "orm_Reps" : 0,
+        "orm_Reps" : 0,
+        "orm_Reps" : 0,
+        "orm_Reps" : 0,
+        "orm_Reps" : 0,
+        "orm_Reps" : 0,
+        "orm_Reps" : 0,
+        "orm_Reps" : 0,
+        "orm_Reps" : 0
+      };
 
       oneRepMax = $scope.user.info.weight_lifted / (1.0278 - (0.0278 * $scope.user.info.reps));
-      $scope.user.info.orm = Math.round(oneRepMax) + globals.lbs;
+      $scope.results.orm = Math.round(oneRepMax) + globals.lbs;
 
-     // angular.forEach(oneRepMaxPercentages, function(val, $key) {
-     //  $info.$key = math.round(onerepmax * val) + globals.lbs;
-     //   console.log($info.key);
-     // });
+       // Repetitions
+       angular.forEach(ORM_VALUES, function(val, $key) {
+         $scope.results.$key = Math.round(oneRepMax * val) + globals.lbs;
 
-     // FIXME: D.R.Y.
-     // Percentages
-     $scope.results.orm_95 = Math.round(oneRepMax * 0.95) + globals.lbs;
-     $scope.results.orm_90 = Math.round(oneRepMax * 0.90) + globals.lbs;
-     $scope.results.orm_85 = Math.round(oneRepMax * 0.85) + globals.lbs;
-     $scope.results.orm_80 = Math.round(oneRepMax * 0.80) + globals.lbs;
-     $scope.results.orm_75 = Math.round(oneRepMax * 0.75) + globals.lbs;
-     $scope.results.orm_70 = Math.round(oneRepMax * 0.70) + globals.lbs;
-     $scope.results.orm_65 = Math.round(oneRepMax * 0.65) + globals.lbs;
-     $scope.results.orm_60 = Math.round(oneRepMax * 0.60) + globals.lbs;
+         // DEBUG
+         var tmp = (val*100).toString();
+         console.log($key+": "+val);
+         console.log(tmp+"%: "+$scope.results.$key);
+       });
 
-      // Repetitions
+       // Percentages
+
+/*
       $scope.results.orm_1Reps  = Math.round(oneRepMax) + globals.lbs;
       $scope.results.orm_2Reps  = Math.round(oneRepMax * 0.95) + globals.lbs;
       $scope.results.orm_3Reps  = Math.round(oneRepMax * 0.90) + globals.lbs;
@@ -49,6 +72,7 @@ angular.module('healthCalculators')
       $scope.results.orm_12Reps = Math.round(oneRepMax * 0.70) + globals.lbs;
       $scope.results.orm_15Reps = Math.round(oneRepMax * 0.66) + globals.lbs;
       $scope.results.orm_20Reps = Math.round(oneRepMax * 0.60) + globals.lbs;
+*/
 
     };
 
