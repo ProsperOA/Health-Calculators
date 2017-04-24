@@ -30,7 +30,8 @@
               <label class="item item-input item-select">
                   <div class="input-label">Activity Level</div>
                   <select ng-model="activity">
-                      <option ng-selected="true">Sedentary</option>
+                      <option ng-selected="true">Basal Metabolic Rate</option>
+                      <option>Sedentary</option>
                       <option>Lightly Active</option>
                       <option>Moderately Active</option>
                       <option>Very Active</option>
@@ -52,15 +53,15 @@
         </div>
         <div class="row">
           <div class="col col-100">
-            <button class="button button-outline button-stable button-calculate" ng-click="reset()">
-              Reset
+            <button class="button button-outline button-stable button-calculate" ng-click="clear()">
+              Clear
             </button>
           </div>
         </div>
       </div>
     </form>
 
-    <div class="user-results">
+    <div class="user-results" ng-hide="calIntake.bmr">
       <div class="row">
         <div class="col col-50">
           <p>Maintain Weight:</p>
@@ -99,6 +100,19 @@
         </div>
         <div class="col col-50">
           <span>{{ results.cal_gain2 }}</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="user-results center" ng-show="calIntake.bmr">
+      <div class="row">
+        <div class="col col-100">
+          <p>BMR:</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col col-100">
+          <span>{{ results.bmr }}</span>
         </div>
       </div>
     </div>

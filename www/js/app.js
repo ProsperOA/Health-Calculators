@@ -36,13 +36,13 @@ angular.module('healthCalculators', ['ionic'])
       }
     }
   })
-  
-  .state('app.cal-intake', {
-    url: '/cal-intake',
+
+  .state('app.cal_intake', {
+    url: '/cal_intake',
     views: {
       'menuContent': {
-        templateUrl: 'templates/calculators/cal-intake.html',
-        controller: 'Bmr-CalorieCtrl'
+        templateUrl: 'templates/calculators/cal_intake.html',
+        controller: 'CaloricIntakeCtrl'
       }
     }
   })
@@ -56,7 +56,7 @@ angular.module('healthCalculators', ['ionic'])
       }
     }
   })
-  
+
   .state('app.lbm', {
       url: '/lbm',
       views: {
@@ -77,16 +77,6 @@ angular.module('healthCalculators', ['ionic'])
       }
     })
 
-  .state('app.bmr', {
-      url: '/bmr',
-      views: {
-        'menuContent': {
-          templateUrl: 'templates/calculators/bmr.html',
-          controller: 'Bmr-CalorieCtrl'
-        }
-      }
-    })
-  
   .state('app.orm', {
       url: '/orm',
       views: {
@@ -96,7 +86,7 @@ angular.module('healthCalculators', ['ionic'])
         }
       }
     })
-  
+
   .state('app.thr', {
       url: '/thr',
       views: {
@@ -106,7 +96,7 @@ angular.module('healthCalculators', ['ionic'])
         }
       }
     })
-  
+
   .state('app.information', {
       url: '/information',
       views: {
@@ -115,7 +105,7 @@ angular.module('healthCalculators', ['ionic'])
         }
       }
     })
-  
+
   .state('app.settings', {
       url: '/settings',
       views: {
@@ -124,7 +114,7 @@ angular.module('healthCalculators', ['ionic'])
         }
       }
     });
-  
+
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/home');
 });
